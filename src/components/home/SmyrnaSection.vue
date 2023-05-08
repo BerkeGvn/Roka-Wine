@@ -1,0 +1,50 @@
+<template>
+  <section class="smyrna section">
+    <div class="smyrna-main">
+      <img class="smyrna-main-pic" src="../../assets/images/smyrna.jpg" alt="" />
+      <h2 class="smyrna-main-header section-header">SMYRNA.</h2>
+      <p class="smyrna-main-p">
+        Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia
+        consequat duis enim velit mollit.
+      </p>
+    </div>
+    <BaseAside>The Dream</BaseAside>
+  </section>
+</template>
+
+<script setup>
+import BaseAside from '../ui/BaseAside.vue'
+</script>
+
+<style lang="scss" scoped>
+.smyrna {
+  background-color: var(--rw-primary-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(../../assets/background-logo.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  &-main {
+    margin-left: 10rem;
+    margin-right: 5rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    &-pic {
+      max-width: 50vw;
+    }
+    &-header {
+      position: absolute;
+      top: 0;
+      left: 40%;
+    }
+    &-p {
+      text-align: center;
+      font-size: var(--rw-font-p1);
+      margin: 0 1rem;
+    }
+  }
+}
+</style>
