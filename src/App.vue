@@ -6,9 +6,7 @@
 
 <style>
 .section {
-  height: 100vh;
-  overflow: hidden;
-  position: relative;
+  min-height: 100vh;
 }
 .section-header {
   font-size: 5.7vw;

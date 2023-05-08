@@ -28,7 +28,7 @@ import BaseAside from '../ui/BaseAside.vue'
   background-size: contain;
   &-main {
     margin-left: 10rem;
-    margin-right: 12rem;
+    margin-right: 5rem;
     position: relative;
     display: flex;
     align-items: center;
@@ -43,7 +43,7 @@ import BaseAside from '../ui/BaseAside.vue'
     &-p {
       text-align: center;
       font-size: var(--rw-font-p1);
-      margin: 0 4rem;
+      margin: 0 1rem;
     }
   }
 }
