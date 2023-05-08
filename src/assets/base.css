@@ -1,30 +1,49 @@
 /* color palette from <https://github.com/vuejs/theme> */
 @import 'normalize.css';
-@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;1,300;1,400;1,600;1,700&family=Poppins:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;1,300;1,400;1,600;1,700&display=swap');
 :root {
   --rw-primary-1: #396b63;
   --rw-primary-2: #284d47;
   --rw-primary-3: #203d39;
 
-  --rw-secondary-1: #396b63;
-  --rw-secondary-2: #284d47;
-  --rw-secondary-3: #203d39;
+  --rw-secondary-1: #ff7579;
+  --rw-secondary-2: #e75055;
+  --rw-secondary-3: #c44448;
 
   --rw-accent-1: #f2ebe4;
   --rw-accent-2: #f0eadb;
   --rw-accent-3: #cfc9bc;
 
-  --rw-font-h1: 11rem;
-  --rw-font-h2: 9.4rem;
-  --rw-font-h3: 72rem;
-  --rw-font-h4: 60rem;
-  --rw-font-h5: 48rem;
-  --rw-font-h6: 36rem;
-  --rw-font-h7: 30rem;
-  --rw-font-p1: 24rem;
-  --rw-font-p2: 20rem;
-  --rw-font-p3: 18rem;
-  --rw-font-p4: 16rem;
+  --rw-text-color-1: #fafafa;
+  --rw-text-color-2: #81908f;
+  --rw-text-color-3: #141a19;
+
+  --rw-font-h1: 5.72vw;
+  --rw-font-h2: 4.89vw;
+  --rw-font-h3: 3.75vw;
+  --rw-font-h4: 3.12vw;
+  --rw-font-h5: 2.5vw;
+  --rw-font-h6: 1.87vw;
+  --rw-font-h7: 1.56vw;
+  --rw-font-p1: 1.25vw;
+  --rw-font-p2: 1.04vw;
+  --rw-font-p3: 0.93vw;
+  --rw-font-p4: 0.83vw;
+}
+@media (max-width: 1024px) {
+  :root {
+    --rw-font-h1: 11rem;
+    --rw-font-h2: 9.4rem;
+    --rw-font-h3: 7.2rem;
+    --rw-font-h4: 6rem;
+    --rw-font-h5: 4.8rem;
+    --rw-font-h6: 3.6rem;
+    --rw-font-h7: 3rem;
+    --rw-font-p1: 2.4rem;
+    --rw-font-p2: 2rem;
+    --rw-font-p3: 1.8rem;
+    --rw-font-p4: 1.6rem;
+  }
 }
 
 * {
@@ -46,4 +65,31 @@ html {
 
 body {
   font-family: 'Bitter', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  color: var(--rw-text-color-1);
+}
+
+ul,
+li {
+  list-style: none;
+}
+a,
+a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+.nonsense {
+  @media (max-width: 767px) {
+    --rw-font-h1: 11rem;
+    --rw-font-h2: 9.4rem;
+    --rw-font-h3: 7.2rem;
+    --rw-font-h4: 6rem;
+    --rw-font-h5: 4.8rem;
+    --rw-font-h6: 3.6rem;
+    --rw-font-h7: 3rem;
+    --rw-font-p1: 2.4rem;
+    --rw-font-p2: 2rem;
+    --rw-font-p3: 1.8rem;
+    --rw-font-p4: 1.6rem;
+  }
 }
