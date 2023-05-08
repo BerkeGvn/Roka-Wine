@@ -1,15 +1,15 @@
 <template>
-  <div class="smyrna">
+  <section class="smyrna section">
     <div class="smyrna-main">
       <img class="smyrna-main-pic" src="../../assets/images/smyrna.jpg" alt="" />
-      <h2 class="smyrna-main-header">SMYRNA.</h2>
+      <h2 class="smyrna-main-header section-header">SMYRNA.</h2>
       <p class="smyrna-main-p">
         Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia
         consequat duis enim velit mollit.
       </p>
     </div>
     <BaseAside>The Dream</BaseAside>
-  </div>
+  </section>
 </template>
 
 <script setup>
@@ -18,10 +18,7 @@ import BaseAside from '../ui/BaseAside.vue'
 
 <style lang="scss" scoped>
 .smyrna {
-  height: 100vh;
   background-color: var(--rw-primary-2);
-  overflow: hidden;
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -39,9 +36,6 @@ import BaseAside from '../ui/BaseAside.vue'
       max-width: 50vw;
     }
     &-header {
-      font-size: 5.7vw;
-      font-weight: 400;
-      font-style: italic;
       position: absolute;
       top: 0;
       left: 40%;

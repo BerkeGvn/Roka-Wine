@@ -1,10 +1,12 @@
 <template>
-  <aside class="aside">
+  <aside :class="props.color" class="aside">
     <slot></slot>
   </aside>
 </template>
 
-<script setup></script>
+<script setup>
+const props = defineProps(['color'])
+</script>
 
 <style lang="scss" scoped>
 aside {
@@ -17,5 +19,10 @@ aside {
   text-align: center;
   font-size: var(--rw-font-h4);
   writing-mode: vertical-rl;
+  letter-spacing: 4px;
+}
+.dark {
+  color: var(--rw-primary-2);
+  border-color: var(--rw-primary-2);
 }
 </style>

@@ -39,12 +39,12 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  padding: 2rem;
+  padding: 1.04vw;
   font-style: italic;
   position: relative;
   overflow: hidden;
   & svg {
-    width: 20rem;
+    width: 10.41vw;
   }
 
   & .main-quote {
