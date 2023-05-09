@@ -6,15 +6,31 @@
         <img src="../../assets/images/vineyard-1.jpg" alt="" />
       </div>
       <div class="vineyard-main-info">
-        <p>
-          Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia
-          consequat duis enim velit mollit.
-        </p>
+        <div>
+          <p>
+            Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia
+            consequat duis enim velit mollit.
+          </p>
+          <svg class="background-animation">
+            <text
+              class="background-animation-text"
+              x="25%"
+              y="20%"
+              dominant-baseline="middle"
+              text-anchor="middle"
+              fill="none"
+              vector-effect="non-scaling-stroke"
+            >
+              Turkiye
+            </text>
+          </svg>
+        </div>
         <div class="vineyard-main-info-images">
           <img src="../../assets/images/vineyard-2.jpg" alt="vineyard picture" />
           <img src="../../assets/images/grapes.jpg" alt="vineyard picture" />
         </div>
       </div>
+
       <div class="vineyard-footer">
         <div class="vineyard-footer-border"></div>
         <h3>Roka</h3>
@@ -45,10 +61,11 @@ import BaseAside from '../ui/BaseAside.vue'
   color: var(--rw-primary-2);
   display: flex;
   overflow: hidden;
+  position: absolute;
   &-main {
     &-header {
       &-h2 {
-        margin-left: 10rem;
+        margin-left: 6rem;
         margin-top: 5rem;
       }
       & img {
@@ -56,12 +73,13 @@ import BaseAside from '../ui/BaseAside.vue'
       }
     }
     &-info {
-      font-size: var(--rw-font-p1);
+      font-size: var(--rw-font-p2);
       display: flex;
       align-items: center;
       margin-top: 4rem;
       & p {
         margin: 0 2rem;
+        width: 80%;
       }
       &-images {
         position: relative;
@@ -85,11 +103,12 @@ import BaseAside from '../ui/BaseAside.vue'
           content: '';
           position: absolute;
           background-color: var(--rw-primary-2);
-          width: 66rem;
+          width: 100%;
           height: 1px;
           top: 1rem;
-          left: -60rem;
+          left: 0;
           z-index: 1;
+          transform: translateX(-100%);
         }
         &::after {
           content: '1962';
@@ -103,6 +122,7 @@ import BaseAside from '../ui/BaseAside.vue'
       }
     }
   }
+
   &-footer {
     font-size: var(--rw-font-h4);
     margin-top: 15rem;
