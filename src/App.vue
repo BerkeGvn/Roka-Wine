@@ -14,6 +14,7 @@
   font-style: italic;
 }
 .background-animation {
+  font-family: 'Source Serif Pro', serif;
   position: absolute;
   width: 90vw;
   height: 90vh;
@@ -31,9 +32,15 @@
   stroke: var(--rw-secondary-1);
   text-transform: uppercase;
   transition: all 1s;
-
-  &:hover {
-    stroke-dashoffset: 0%;
-  }
+}
+.background-animation-text-small {
+  stroke-dasharray: 100%;
+  stroke-dashoffset: 100%;
+  font-size: 5vw;
+  line-height: 88%;
+  stroke-width: 0.8px;
+  stroke: var(--rw-text-color-2);
+  text-transform: uppercase;
+  transition: all 1s;
 }
 </style>

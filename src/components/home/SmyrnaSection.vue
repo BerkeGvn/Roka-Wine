@@ -1,5 +1,5 @@
 <template>
-  <section class="smyrna section">
+  <section ref="target" class="smyrna section">
     <div class="smyrna-main">
       <img class="smyrna-main-pic" src="../../assets/images/smyrna.jpg" alt="" />
       <h2 class="smyrna-main-header section-header">SMYRNA.</h2>
@@ -7,6 +7,20 @@
         Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia
         consequat duis enim velit mollit.
       </p>
+      <svg class="background-animation">
+        <text
+          class="background-animation-text-small"
+          x="75%"
+          y="85%"
+          dominant-baseline="middle"
+          text-anchor="middle"
+          fill="none"
+          vector-effect="non-scaling-stroke"
+          :style="{ 'stroke-dashoffset': animate + '%' }"
+        >
+          Turkiye
+        </text>
+      </svg>
     </div>
     <BaseAside>The Dream</BaseAside>
   </section>
@@ -14,6 +28,8 @@
 
 <script setup>
 import BaseAside from '../ui/BaseAside.vue'
+import { useAnimation } from '../../composables/useAnimationHandler'
+const { target, animate } = useAnimation()
 </script>
 
 <style lang="scss" scoped>
