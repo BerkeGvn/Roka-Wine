@@ -74,6 +74,30 @@
     & ul {
       display: flex;
       justify-content: space-around;
+      text-transform: uppercase;
+      & li {
+        & a {
+          position: relative;
+          z-index: 1;
+          text-align: center;
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-image: linear-gradient(
+            0deg,
+            var(--rw-text-color-1),
+            var(--rw-text-color-1) 50%,
+            var(--rw-secondary-2) 50%
+          );
+          background-size: 100% 200%;
+          background-position: 100% 100%;
+          &:hover {
+            font-weight: 600;
+            transition: all 0.5s ease-in-out;
+            background-position: 0% 0%;
+          }
+        }
+      }
     }
   }
 }

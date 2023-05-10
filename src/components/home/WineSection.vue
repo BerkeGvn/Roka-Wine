@@ -22,7 +22,21 @@
             consequat duis enim velit mollit.
           </p>
         </div>
-        <a class="wine-main-info-button">Our Wines</a>
+        <div class="wine-main-info-button">
+          <a href="#">Our Wines </a>
+          <svg
+            width="12"
+            height="20"
+            viewBox="0 0 12 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M2 -8.74228e-07L12 10L2 20L0.225001 18.225L8.45 10L0.225002 1.775L2 -8.74228e-07Z"
+              fill="#E75055"
+            />
+          </svg>
+        </div>
       </div>
     </div>
     <BaseAside :color="'red'">Passion</BaseAside>
@@ -66,6 +80,40 @@ import BaseAside from '../ui/BaseAside.vue'
         margin-right: 5%;
         font-size: var(--rw-font-h6);
         align-self: flex-end;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        &:hover {
+          & a {
+            &:hover::after {
+              bottom: -5%;
+            }
+          }
+          & svg {
+            padding-left: 1rem;
+          }
+        }
+        & a {
+          position: relative;
+          &::after {
+            content: '';
+            position: absolute;
+            bottom: -1%;
+            left: 0;
+            height: 2px;
+            width: 100%;
+            background-color: var(--rw-secondary-2);
+            transition: all 0.2s;
+          }
+        }
+        & svg {
+          transition: all 0.5s;
+          width: 2.2rem;
+          height: 2.2rem;
+        }
+        & polygon {
+          fill: var(--rw-secondary-2);
+        }
       }
     }
     &-images {
