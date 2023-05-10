@@ -17,9 +17,14 @@ aside {
   font-size: var(--rw-font-h4);
   writing-mode: vertical-rl;
   letter-spacing: 4px;
+  align-self: stretch;
 }
 .dark {
   color: var(--rw-primary-2);
   border-color: var(--rw-primary-2);
+}
+
+.red {
+  border-color: var(--rw-secondary-3);
 }
 </style>
