@@ -1,5 +1,5 @@
 <template>
-  <section class="family section">
+  <section ref="target" class="family section">
     <div class="family-main">
       <div class="family-main-header">
         <h2 class="family-main-header-h2 section-header">FAMILY.</h2>
@@ -36,12 +36,13 @@
     <svg class="background-animation">
       <text
         class="background-animation-text"
-        x="35%"
+        x="25%"
         y="90%"
         dominant-baseline="middle"
         text-anchor="middle"
         fill="none"
         vector-effect="non-scaling-stroke"
+        :style="{ 'stroke-dashoffset': animate + '%' }"
       >
         ROKA
       </text>
@@ -51,6 +52,8 @@
 
 <script setup>
 import BaseAside from '../ui/BaseAside.vue'
+import { useAnimation } from '../../composables/useAnimationHandler'
+const { target, animate } = useAnimation()
 </script>
 
 <style lang="scss" scoped>
@@ -130,5 +133,8 @@ import BaseAside from '../ui/BaseAside.vue'
     font-size: 8.72vw;
     font-weight: 300;
   }*/
+}
+.visible {
+  stroke-dashoffset: 0%;
 }
 </style>

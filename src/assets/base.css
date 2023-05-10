@@ -1,6 +1,6 @@
 /* color palette from <https://github.com/vuejs/theme> */
 @import 'normalize.css';
-@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;1,300;1,400;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;1,300;1,400;1,600;1,700&family=Source+Serif+Pro&display=swap');
 :root {
   --rw-primary-1: #396b63;
   --rw-primary-2: #284d47;

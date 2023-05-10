@@ -1,5 +1,5 @@
 <template>
-  <section class="vineyard section">
+  <section ref="target" class="vineyard section">
     <div class="vineyard-main">
       <div class="vineyard-main-header">
         <h2 class="vineyard-main-header-h2 section-header">VINEYARD.</h2>
@@ -20,8 +20,9 @@
               text-anchor="middle"
               fill="none"
               vector-effect="non-scaling-stroke"
+              :style="{ 'stroke-dashoffset': animate + '%' }"
             >
-              Turkiye
+              İZMİR
             </text>
           </svg>
         </div>
@@ -47,12 +48,14 @@
       </div>
     </div>
 
-    <BaseAside :color="'dark'">Expressive</BaseAside>
+    <BaseAside :color="'dark'">Mediterranean </BaseAside>
   </section>
 </template>
 
 <script setup>
 import BaseAside from '../ui/BaseAside.vue'
+import { useAnimation } from '../../composables/useAnimationHandler'
+const { target, animate } = useAnimation()
 </script>
 
 <style lang="scss" scoped>
