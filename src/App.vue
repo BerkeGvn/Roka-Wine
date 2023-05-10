@@ -15,8 +15,8 @@
 }
 .background-animation {
   position: absolute;
-  width: 100vw;
-  height: 100vh;
+  width: 90vw;
+  height: 90vh;
   -webkit-user-drag: none;
   -webkit-user-select: none;
   -ms-user-select: none;
@@ -28,7 +28,7 @@
   font-size: 10vw;
   line-height: 88%;
   stroke-width: 0.8px;
-  stroke: var(--rw-secondary-2);
+  stroke: var(--rw-secondary-1);
   text-transform: uppercase;
   transition: all 1s;
 

@@ -60,7 +60,6 @@ import BaseAside from '../ui/BaseAside.vue'
   display: flex;
   align-items: center;
   position: relative;
-  overflow: hidden;
   &-main {
     flex: 1;
     &-header {

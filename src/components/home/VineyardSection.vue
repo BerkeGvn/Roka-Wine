@@ -61,7 +61,8 @@ import BaseAside from '../ui/BaseAside.vue'
   color: var(--rw-primary-2);
   display: flex;
   overflow: hidden;
-  position: absolute;
+  position: relative;
+  align-items: center;
   &-main {
     &-header {
       &-h2 {
