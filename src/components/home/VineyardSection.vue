@@ -2,12 +2,26 @@
   <section ref="target" class="vineyard section">
     <div class="vineyard-main">
       <div class="vineyard-main-header">
-        <h2 class="vineyard-main-header-h2 section-header">VINEYARD.</h2>
+        <h2
+          class="vineyard-main-header-h2 section-header"
+          data-aos="fade-right"
+          data-aos-duration="1000"
+          data-aos-delay="500"
+          data-aos-once="true"
+        >
+          VINEYARD.
+        </h2>
         <img src="../../assets/images/vineyard-1.jpg" alt="" />
       </div>
       <div class="vineyard-main-info">
+        <div
+          class="vineyard-main-info-line"
+          data-aos="line-animation"
+          data-aos-duration="1000"
+          data-aos-once="true"
+        ></div>
         <div>
-          <p>
+          <p data-aos="fade-up" data-aos-duration="800" data-aos-delay="1000" data-aos-once="true">
             Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia
             consequat duis enim velit mollit.
           </p>
@@ -27,8 +41,22 @@
           </svg>
         </div>
         <div class="vineyard-main-info-images">
-          <img src="../../assets/images/vineyard-2.jpg" alt="vineyard picture" />
-          <img src="../../assets/images/grapes.jpg" alt="vineyard picture" />
+          <img
+            src="../../assets/images/vineyard-2.jpg"
+            alt="vineyard picture"
+            data-aos="picture-animation"
+            data-aos-duration="1000"
+            data-aos-delay="300"
+            data-aos-once="true"
+          />
+          <img
+            src="../../assets/images/grapes.jpg"
+            alt="vineyard picture"
+            data-aos="zoom-in-up"
+            data-aos-duration="500"
+            data-aos-delay="800"
+            data-aos-once="true"
+          />
         </div>
       </div>
 
@@ -81,6 +109,15 @@ const { target, animate } = useAnimation()
       display: flex;
       align-items: center;
       margin-top: 4rem;
+      position: relative;
+      &-line {
+        position: absolute;
+        top: 0;
+        left: 30%;
+        background-color: var(--rw-primary-2);
+        width: 50%;
+        height: 1px;
+      }
       & p {
         margin: 0 2rem;
         width: 80%;
@@ -103,7 +140,7 @@ const { target, animate } = useAnimation()
             z-index: 3;
           }
         }
-        &::before {
+        /*     &::before {
           content: '';
           position: absolute;
           background-color: var(--rw-primary-2);
@@ -113,7 +150,7 @@ const { target, animate } = useAnimation()
           left: 0;
           z-index: 1;
           transform: translateX(-100%);
-        }
+        }*/
         &::after {
           content: '1962';
           position: absolute;
@@ -149,6 +186,22 @@ const { target, animate } = useAnimation()
         height: 4.8rem;
       }
     }
+  }
+}
+[data-aos='picture-animation'] {
+  transform: scale(1.5);
+  opacity: 0;
+  transition: all;
+  &.aos-animate {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+[data-aos='line-animation'] {
+  width: 0%;
+  transition: all;
+  &.aos-animate {
+    width: 50%;
   }
 }
 </style>
