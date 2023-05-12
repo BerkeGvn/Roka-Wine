@@ -6,11 +6,19 @@
       </div>
       <div class="family-main-info">
         <div class="family-main-info-text">
-          <h3 class="family-main-info-h3">A Story that started half century ago.</h3>
-          <p>
+          <h3 ref="subHeader" class="family-main-info-h3">
+            <span class="family-main-info-h3-words">A Story </span>
+            <span class="family-main-info-h3-words">that </span>
+            <span class="family-main-info-h3-words">started </span>
+            <span class="family-main-info-h3-words">half </span>
+            <span class="family-main-info-h3-words">century </span>
+            <span class="family-main-info-h3-words">ago.</span>
+          </h3>
+          <p class="family-main-info-p">
             Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia
             consequat duis enim velit mollit.
           </p>
+          <div class="family-main-info-text-line"></div>
         </div>
         <div class="family-main-info-images">
           <img
@@ -20,11 +28,14 @@
             data-scroll
             data-scroll-speed="1"
           />
-          <img
-            class="family-main-info-images-2"
-            src="../../assets/images/mansion.jpg"
-            alt="mansion picture"
-          />
+          <div class="family-main-info-images-2-wrapper">
+            <img
+              class="family-main-info-images-2"
+              src="../../assets/images/mansion.jpg"
+              alt="mansion picture"
+            />
+          </div>
+
           <img
             class="family-main-info-images-3"
             src="../../assets/images/dog-farm.jpg"
@@ -46,7 +57,7 @@
         text-anchor="middle"
         fill="none"
         vector-effect="non-scaling-stroke"
-        :style="{ 'stroke-dashoffset': animate + '%' }"
+        :style="{ 'stroke-dashoffset': animateVal + '%' }"
       >
         ROKA
       </text>
@@ -56,8 +67,15 @@
 
 <script setup>
 import BaseAside from '../ui/BaseAside.vue'
-import { useAnimation } from '../../composables/useAnimationHandler'
-const { target, animate } = useAnimation()
+import { useAnimation } from '../../composables/useBackgroundAnimationHandler'
+import { animate } from '../../composables/useElementAnimationHandler'
+const { target, animateVal } = useAnimation()
+
+animate.header('.family-main-header-h2', '.family')
+animate.mainImg('.family-main-info-images-2', '.family')
+animate.text('.family-main-info-p', '.family')
+animate.line('.family-main-info-text-line', '.family')
+animate.words('.family-main-info-h3-words', '.family')
 </script>
 
 <style lang="scss" scoped>
@@ -80,6 +98,13 @@ const { target, animate } = useAnimation()
       display: flex;
       &-text {
         position: relative;
+        &-line {
+          position: absolute;
+          width: 150%;
+          height: 1px;
+          margin-top: 5rem;
+          background-color: var(--rw-primary-2);
+        }
       }
       &-h3 {
         font-weight: 400;
@@ -93,15 +118,6 @@ const { target, animate } = useAnimation()
       & p {
         margin-top: 25%;
         position: relative;
-        &::after {
-          content: '';
-          position: absolute;
-          height: 1px;
-          width: 150%;
-          background-color: var(--rw-primary-2);
-          bottom: -5rem;
-          left: 0;
-        }
       }
 
       &-images {
@@ -118,6 +134,9 @@ const { target, animate } = useAnimation()
         }
         &-2 {
           width: 50vw;
+          &-wrapper {
+            overflow: hidden;
+          }
         }
         &-3 {
           width: 23vw;

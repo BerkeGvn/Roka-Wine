@@ -1,23 +1,24 @@
 <template>
-  <div class="main">
+  <section class="main">
     <div class="vineyard-parallax"></div>
     <BaseAside>Elegant</BaseAside>
-  </div>
+  </section>
 </template>
 
 <script setup>
 import BaseAside from '../ui/BaseAside.vue'
+import { animate } from '../../composables/useElementAnimationHandler'
+animate.parallax('.main')
 </script>
 
 <style lang="scss" scoped>
 .main {
   background-color: var(--rw-accent-2);
-  overflow: hidden;
   background-image: url(../../assets/images/vineyard-3.jpg);
-  background-attachment: fixed;
-  background-position: center;
   background-repeat: no-repeat;
+  background-position: 50% 0%;
   background-size: cover;
+  background-attachment: scroll;
   height: 100vh;
   display: flex;
 }

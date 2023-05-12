@@ -6,8 +6,9 @@
         <img src="../../assets/images/vineyard-1.jpg" alt="" />
       </div>
       <div class="vineyard-main-info">
+        <div class="vineyard-main-info-line"></div>
         <div>
-          <p>
+          <p class="vineyard-main-info-p">
             Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia
             consequat duis enim velit mollit.
           </p>
@@ -20,15 +21,20 @@
               text-anchor="middle"
               fill="none"
               vector-effect="non-scaling-stroke"
-              :style="{ 'stroke-dashoffset': animate + '%' }"
+              :style="{ 'stroke-dashoffset': animateVal + '%' }"
             >
               İZMİR
             </text>
           </svg>
         </div>
         <div class="vineyard-main-info-images">
-          <img src="../../assets/images/vineyard-2.jpg" alt="vineyard picture" />
           <img
+            class="vineyard-main-info-images-1"
+            src="../../assets/images/vineyard-2.jpg"
+            alt="vineyard picture"
+          />
+          <img
+            class="vineyard-main-info-images-2"
             src="../../assets/images/grapes.jpg"
             alt="grapes picture"
             data-scroll
@@ -59,8 +65,14 @@
 
 <script setup>
 import BaseAside from '../ui/BaseAside.vue'
-import { useAnimation } from '../../composables/useAnimationHandler'
-const { target, animate } = useAnimation()
+import { useAnimation } from '../../composables/useBackgroundAnimationHandler'
+import { animate } from '../../composables/useElementAnimationHandler'
+const { target, animateVal } = useAnimation()
+
+animate.header('.vineyard-main-header-h2', '.vineyard')
+animate.mainImg('.vineyard-main-info-images-1', '.vineyard')
+animate.text('.vineyard-main-info-p', '.vineyard')
+animate.line('.vineyard-main-info-line', '.vineyard')
 </script>
 
 <style lang="scss" scoped>
@@ -86,6 +98,15 @@ const { target, animate } = useAnimation()
       display: flex;
       align-items: center;
       margin-top: 4rem;
+      position: relative;
+      &-line {
+        position: absolute;
+        top: 1px;
+        left: 20%;
+        background-color: var(--rw-primary-2);
+        width: 50%;
+        height: 1px;
+      }
       & p {
         margin: 0 2rem;
         width: 80%;
@@ -108,17 +129,7 @@ const { target, animate } = useAnimation()
             z-index: 3;
           }
         }
-        &::before {
-          content: '';
-          position: absolute;
-          background-color: var(--rw-primary-2);
-          width: 100%;
-          height: 1px;
-          top: 1rem;
-          left: 0;
-          z-index: 1;
-          transform: translateX(-100%);
-        }
+
         &::after {
           content: '1962';
           position: absolute;

@@ -1,7 +1,10 @@
 <template>
   <section ref="target" class="smyrna section">
     <div class="smyrna-main">
-      <img class="smyrna-main-pic" src="../../assets/images/smyrna.jpg" alt="" ref="img" />
+      <div class="smyrna-main-wrapper-pic">
+        <img class="smyrna-main-pic" src="../../assets/images/smyrna.jpg" alt="" ref="img" />
+      </div>
+
       <h2 class="smyrna-main-header section-header">SMYRNA.</h2>
       <p class="smyrna-main-p">
         Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia
@@ -16,7 +19,7 @@
           text-anchor="middle"
           fill="none"
           vector-effect="non-scaling-stroke"
-          :style="{ 'stroke-dashoffset': animate + '%' }"
+          :style="{ 'stroke-dashoffset': animateVal + '%' }"
         >
           Turkiye
         </text>
@@ -28,8 +31,13 @@
 
 <script setup>
 import BaseAside from '../ui/BaseAside.vue'
-import { useAnimation } from '../../composables/useAnimationHandler'
-const { target, animate } = useAnimation()
+import { useAnimation } from '../../composables/useBackgroundAnimationHandler'
+import { animate } from '../../composables/useElementAnimationHandler'
+
+animate.header('.smyrna-main-header', '.smyrna')
+animate.text('.smyrna-main-p', '.smyrna')
+animate.mainImg('.smyrna-main-pic', '.smyrna')
+const { target, animateVal } = useAnimation()
 </script>
 
 <style lang="scss" scoped>
@@ -48,6 +56,10 @@ const { target, animate } = useAnimation()
     position: relative;
     display: flex;
     align-items: center;
+    &-wrapper-pic {
+      overflow: hidden;
+      display: inline-table;
+    }
     &-pic {
       max-width: 50vw;
     }

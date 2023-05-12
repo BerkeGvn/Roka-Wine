@@ -8,7 +8,7 @@
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import LocomotiveScroll from 'locomotive-scroll'
 import 'locomotive-scroll/dist/locomotive-scroll.css'
-
+import { test } from './composables/useElementAnimationHandler'
 const scrollContainer = ref(null)
 let scroll = null
 
@@ -20,6 +20,7 @@ onMounted(() => {
       smooth: true
     }
   })
+  test(scrollContainer.value, scroll)
 })
 onBeforeUnmount(() => {
   scroll.destroy()
