@@ -10,6 +10,7 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "aos": "^2.3.4",
     "normalize.css": "^8.0.1",
     "sass": "^1.62.1",
     "vue": "^3.2.47",
@@ -17,6 +18,7 @@
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.2.0",
+    "@types/aos": "^3.0.4",
     "@vitejs/plugin-vue": "^4.2.1",
     "@vue/eslint-config-prettier": "^7.1.0",
     "eslint": "^8.39.0",
