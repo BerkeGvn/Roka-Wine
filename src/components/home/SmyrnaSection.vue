@@ -1,7 +1,7 @@
 <template>
   <section ref="target" class="smyrna section">
     <div class="smyrna-main">
-      <img class="smyrna-main-pic" src="../../assets/images/smyrna.jpg" alt="" />
+      <img class="smyrna-main-pic" src="../../assets/images/smyrna.jpg" alt="" ref="img" />
       <h2 class="smyrna-main-header section-header">SMYRNA.</h2>
       <p class="smyrna-main-p">
         Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia

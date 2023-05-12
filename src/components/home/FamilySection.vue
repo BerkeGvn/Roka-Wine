@@ -17,6 +17,8 @@
             class="family-main-info-images-1"
             src="../../assets/images/family.jpg"
             alt="a family picture"
+            data-scroll
+            data-scroll-speed="1"
           />
           <img
             class="family-main-info-images-2"
@@ -27,6 +29,8 @@
             class="family-main-info-images-3"
             src="../../assets/images/dog-farm.jpg"
             alt="dog and cow picture"
+            data-scroll
+            data-scroll-speed="1"
           />
         </div>
       </div>
@@ -124,15 +128,6 @@ const { target, animate } = useAnimation()
       }
     }
   }
-  /* & figure {
-    position: absolute;
-    bottom: 0;
-    left: 30%;
-    -webkit-text-stroke: 1px var(--rw-secondary-2);
-    color: transparent;
-    font-size: 8.72vw;
-    font-weight: 300;
-  }*/
 }
 .visible {
   stroke-dashoffset: 0%;

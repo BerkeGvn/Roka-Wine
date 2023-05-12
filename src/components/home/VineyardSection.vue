@@ -28,7 +28,12 @@
         </div>
         <div class="vineyard-main-info-images">
           <img src="../../assets/images/vineyard-2.jpg" alt="vineyard picture" />
-          <img src="../../assets/images/grapes.jpg" alt="vineyard picture" />
+          <img
+            src="../../assets/images/grapes.jpg"
+            alt="grapes picture"
+            data-scroll
+            data-scroll-speed="1"
+          />
         </div>
       </div>
 

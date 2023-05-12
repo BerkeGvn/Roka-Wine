@@ -1,8 +1,34 @@
-<script setup></script>
-
 <template>
-  <RouterView />
+  <div ref="scrollContainer" class="container" data-scroll-container>
+    <RouterView />
+  </div>
 </template>
+
+<script setup>
+import { ref, onMounted, onBeforeUnmount } from 'vue'
+import LocomotiveScroll from 'locomotive-scroll'
+import 'locomotive-scroll/dist/locomotive-scroll.css'
+
+const scrollContainer = ref(null)
+let scroll = null
+
+onMounted(() => {
+  scroll = new LocomotiveScroll({
+    el: scrollContainer.value,
+    smooth: true,
+    smartphone: {
+      smooth: true
+    }
+  })
+})
+onBeforeUnmount(() => {
+  scroll.destroy()
+})
+
+setTimeout(() => {
+  scroll.update()
+}, 500)
+</script>
 
 <style lang="scss">
 .section {

@@ -12,6 +12,8 @@
           class="wine-main-images-3"
           src="../../assets/images/wine-glass.jpg"
           alt="a wine glass"
+          data-scroll
+          data-scroll-speed="1"
         />
       </div>
       <div class="wine-main-info">
