@@ -14,97 +14,41 @@
       </div>
       <div class="family-main-info">
         <div class="family-main-info-text">
-          <h3 class="family-main-info-h3">
-            <span
-              data-aos="fade-up"
-              data-aos-duration="500"
-              data-aos-delay="500"
-              data-aos-once="true"
-              >A Story
-            </span>
-            <span
-              data-aos="fade-up"
-              data-aos-duration="500"
-              data-aos-delay="700"
-              data-aos-once="true"
-              >that
-            </span>
-            <span
-              data-aos="fade-up"
-              data-aos-duration="500"
-              data-aos-delay="900"
-              data-aos-once="true"
-              >started
-            </span>
-            <span
-              data-aos="fade-up"
-              data-aos-duration="500"
-              data-aos-delay="1100"
-              data-aos-once="true"
-              >half
-            </span>
-            <span
-              data-aos="fade-up"
-              data-aos-duration="500"
-              data-aos-delay="1300"
-              data-aos-once="true"
-              >century
-            </span>
-            <span
-              data-aos="fade-up"
-              data-aos-duration="500"
-              data-aos-delay="1600"
-              data-aos-once="true"
-              >ago.</span
-            >
+          <h3 ref="subHeader" class="family-main-info-h3">
+            <span class="family-main-info-h3-words">A Story </span>
+            <span class="family-main-info-h3-words">that </span>
+            <span class="family-main-info-h3-words">started </span>
+            <span class="family-main-info-h3-words">half </span>
+            <span class="family-main-info-h3-words">century </span>
+            <span class="family-main-info-h3-words">ago.</span>
           </h3>
-          <div class="family-main-info-text-para">
-            <p
-              data-aos="fade-up"
-              data-aos-duration="800"
-              data-aos-delay="1000"
-              data-aos-once="true"
-            >
-              Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit
-              officia consequat duis enim velit mollit.
-            </p>
-            <div
-              class="family-main-info-text-line"
-              data-aos="line-animation"
-              data-aos-duration="1000"
-              data-aos-once="true"
-            ></div>
-          </div>
+          <p class="family-main-info-p">
+            Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia
+            consequat duis enim velit mollit.
+          </p>
+          <div class="family-main-info-text-line"></div>
         </div>
         <div class="family-main-info-images">
           <img
             class="family-main-info-images-1"
             src="../../assets/images/family.jpg"
             alt="a family picture"
-            data-aos="zoom-in-down"
-            data-aos-duration="500"
-            data-aos-delay="800"
-            data-aos-once="true"
+            data-scroll
+            data-scroll-speed="1"
           />
           <div class="family-main-info-images-2-wrapper">
             <img
               class="family-main-info-images-2"
               src="../../assets/images/mansion.jpg"
               alt="mansion picture"
-              data-aos="picture-animation"
-              data-aos-duration="1000"
-              data-aos-delay="300"
-              data-aos-once="true"
             />
           </div>
           <img
             class="family-main-info-images-3"
             src="../../assets/images/dog-farm.jpg"
             alt="dog and cow picture"
-            data-aos="zoom-in-up"
-            data-aos-duration="500"
-            data-aos-delay="800"
-            data-aos-once="true"
+            data-scroll
+            data-scroll-speed="1"
           />
         </div>
       </div>
@@ -120,7 +64,7 @@
         text-anchor="middle"
         fill="none"
         vector-effect="non-scaling-stroke"
-        :style="{ 'stroke-dashoffset': animate + '%' }"
+        :style="{ 'stroke-dashoffset': animateVal + '%' }"
       >
         ROKA
       </text>
@@ -130,8 +74,15 @@
 
 <script setup>
 import BaseAside from '../ui/BaseAside.vue'
-import { useAnimation } from '../../composables/useAnimationHandler'
-const { target, animate } = useAnimation()
+import { useAnimation } from '../../composables/useBackgroundAnimationHandler'
+import { animate } from '../../composables/useElementAnimationHandler'
+const { target, animateVal } = useAnimation()
+
+animate.header('.family-main-header-h2', '.family')
+animate.mainImg('.family-main-info-images-2', '.family')
+animate.text('.family-main-info-p', '.family')
+animate.line('.family-main-info-text-line', '.family')
+animate.words('.family-main-info-h3-words', '.family')
 </script>
 
 <style lang="scss" scoped>
@@ -155,6 +106,7 @@ const { target, animate } = useAnimation()
       &-text {
         position: relative;
         &-line {
+          position: absolute;
           width: 150%;
           height: 1px;
           margin-top: 5rem;

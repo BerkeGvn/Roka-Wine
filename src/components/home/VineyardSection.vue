@@ -14,14 +14,9 @@
         <img src="../../assets/images/vineyard-1.jpg" alt="" />
       </div>
       <div class="vineyard-main-info">
-        <div
-          class="vineyard-main-info-line"
-          data-aos="line-animation"
-          data-aos-duration="1000"
-          data-aos-once="true"
-        ></div>
+        <div class="vineyard-main-info-line"></div>
         <div>
-          <p data-aos="fade-up" data-aos-duration="800" data-aos-delay="1000" data-aos-once="true">
+          <p class="vineyard-main-info-p">
             Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia
             consequat duis enim velit mollit.
           </p>
@@ -34,7 +29,7 @@
               text-anchor="middle"
               fill="none"
               vector-effect="non-scaling-stroke"
-              :style="{ 'stroke-dashoffset': animate + '%' }"
+              :style="{ 'stroke-dashoffset': animateVal + '%' }"
             >
               İZMİR
             </text>
@@ -42,20 +37,16 @@
         </div>
         <div class="vineyard-main-info-images">
           <img
+            class="vineyard-main-info-images-1"
             src="../../assets/images/vineyard-2.jpg"
             alt="vineyard picture"
-            data-aos="picture-animation"
-            data-aos-duration="1000"
-            data-aos-delay="300"
-            data-aos-once="true"
           />
           <img
+            class="vineyard-main-info-images-2"
             src="../../assets/images/grapes.jpg"
-            alt="vineyard picture"
-            data-aos="zoom-in-up"
-            data-aos-duration="500"
-            data-aos-delay="800"
-            data-aos-once="true"
+            alt="grapes picture"
+            data-scroll
+            data-scroll-speed="1"
           />
         </div>
       </div>
@@ -82,8 +73,14 @@
 
 <script setup>
 import BaseAside from '../ui/BaseAside.vue'
-import { useAnimation } from '../../composables/useAnimationHandler'
-const { target, animate } = useAnimation()
+import { useAnimation } from '../../composables/useBackgroundAnimationHandler'
+import { animate } from '../../composables/useElementAnimationHandler'
+const { target, animateVal } = useAnimation()
+
+animate.header('.vineyard-main-header-h2', '.vineyard')
+animate.mainImg('.vineyard-main-info-images-1', '.vineyard')
+animate.text('.vineyard-main-info-p', '.vineyard')
+animate.line('.vineyard-main-info-line', '.vineyard')
 </script>
 
 <style lang="scss" scoped>
@@ -112,8 +109,8 @@ const { target, animate } = useAnimation()
       position: relative;
       &-line {
         position: absolute;
-        top: 0;
-        left: 30%;
+        top: 1px;
+        left: 20%;
         background-color: var(--rw-primary-2);
         width: 50%;
         height: 1px;
@@ -140,17 +137,7 @@ const { target, animate } = useAnimation()
             z-index: 3;
           }
         }
-        /*     &::before {
-          content: '';
-          position: absolute;
-          background-color: var(--rw-primary-2);
-          width: 100%;
-          height: 1px;
-          top: 1rem;
-          left: 0;
-          z-index: 1;
-          transform: translateX(-100%);
-        }*/
+
         &::after {
           content: '1962';
           position: absolute;

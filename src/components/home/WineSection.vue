@@ -24,10 +24,8 @@
           class="wine-main-images-3"
           src="../../assets/images/wine-glass.jpg"
           alt="a wine glass"
-          data-aos="fade-up"
-          data-aos-duration="500"
-          data-aos-delay="600"
-          data-aos-once="true"
+          data-scroll
+          data-scroll-speed="1"
         />
       </div>
       <div class="wine-main-info">

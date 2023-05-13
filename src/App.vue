@@ -1,15 +1,46 @@
-<script setup>
-import { onMounted } from 'vue'
-import AOS from 'aos'
-import 'aos/dist/aos.css'
-onMounted(() => {
-  AOS.init()
-})
-</script>
-
 <template>
-  <RouterView />
+  <main ref="scrollContainer" class="container" data-scroll-container>
+    <RouterView @testEm="testEm" />
+  </main>
 </template>
+
+<script setup>
+import { ref, onMounted, onBeforeUnmount } from 'vue'
+import LocomotiveScroll from 'locomotive-scroll'
+import 'locomotive-scroll/dist/locomotive-scroll.css'
+import { gsapLoco } from './composables/useElementAnimationHandler'
+
+const scrollContainer = ref(null)
+let scroll = null
+
+onMounted(() => {
+  scroll = new LocomotiveScroll({
+    el: scrollContainer.value,
+    smooth: true,
+    smartphone: {
+      smooth: true
+    }
+  })
+  gsapLoco(scrollContainer.value, scroll)
+})
+
+onBeforeUnmount(() => {
+  scroll.destroy()
+})
+
+setTimeout(() => {
+  scroll.update()
+}, 7000)
+/* function startScroll() {
+  scroll.start()
+  setTimeout(() => {
+    scroll.update()
+  }, 7000)
+}
+function testEm() {
+  startScroll()
+} */
+</script>
 
 <style lang="scss">
 .section {

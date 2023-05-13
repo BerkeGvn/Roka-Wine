@@ -2,32 +2,11 @@
   <section ref="target" class="smyrna section">
     <div class="smyrna-main">
       <div class="smyrna-main-wrapper-pic">
-        <img
-          data-aos="picture-animation"
-          data-aos-duration="1000"
-          data-aos-delay="200"
-          data-aos-once="true"
-          class="smyrna-main-pic"
-          src="../../assets/images/smyrna.jpg"
-          alt=""
-        />
+        <img class="smyrna-main-pic" src="../../assets/images/smyrna.jpg" alt="" ref="img" />
       </div>
-      <h2
-        class="smyrna-main-header section-header"
-        data-aos="fade-up"
-        data-aos-duration="1000"
-        data-aos-delay="400"
-        data-aos-once="true"
-      >
-        SMYRNA.
-      </h2>
-      <p
-        class="smyrna-main-p"
-        data-aos="fade-up"
-        data-aos-duration="800"
-        data-aos-delay="800"
-        data-aos-once="true"
-      >
+
+      <h2 class="smyrna-main-header section-header">SMYRNA.</h2>
+      <p class="smyrna-main-p">
         Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia
         consequat duis enim velit mollit.
       </p>
@@ -40,7 +19,7 @@
           text-anchor="middle"
           fill="none"
           vector-effect="non-scaling-stroke"
-          :style="{ 'stroke-dashoffset': animate + '%' }"
+          :style="{ 'stroke-dashoffset': animateVal + '%' }"
         >
           Turkiye
         </text>
@@ -52,8 +31,13 @@
 
 <script setup>
 import BaseAside from '../ui/BaseAside.vue'
-import { useAnimation } from '../../composables/useAnimationHandler'
-const { target, animate } = useAnimation()
+import { useAnimation } from '../../composables/useBackgroundAnimationHandler'
+import { animate } from '../../composables/useElementAnimationHandler'
+
+animate.header('.smyrna-main-header', '.smyrna')
+animate.text('.smyrna-main-p', '.smyrna')
+animate.mainImg('.smyrna-main-pic', '.smyrna')
+const { target, animateVal } = useAnimation()
 </script>
 
 <style lang="scss" scoped>

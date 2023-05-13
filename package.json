@@ -10,7 +10,8 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
-    "aos": "^2.3.4",
+    "gsap": "^3.11.5",
+    "locomotive-scroll": "^4.1.4",
     "normalize.css": "^8.0.1",
     "sass": "^1.62.1",
     "vue": "^3.2.47",
