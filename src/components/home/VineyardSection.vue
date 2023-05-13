@@ -2,7 +2,15 @@
   <section ref="target" class="vineyard section">
     <div class="vineyard-main">
       <div class="vineyard-main-header">
-        <h2 class="vineyard-main-header-h2 section-header">VINEYARD.</h2>
+        <h2
+          class="vineyard-main-header-h2 section-header"
+          data-aos="fade-right"
+          data-aos-duration="1000"
+          data-aos-delay="500"
+          data-aos-once="true"
+        >
+          VINEYARD.
+        </h2>
         <img src="../../assets/images/vineyard-1.jpg" alt="" />
       </div>
       <div class="vineyard-main-info">
@@ -165,6 +173,22 @@ animate.line('.vineyard-main-info-line', '.vineyard')
         height: 4.8rem;
       }
     }
+  }
+}
+[data-aos='picture-animation'] {
+  transform: scale(1.5);
+  opacity: 0;
+  transition: all;
+  &.aos-animate {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+[data-aos='line-animation'] {
+  width: 0%;
+  transition: all;
+  &.aos-animate {
+    width: 50%;
   }
 }
 </style>

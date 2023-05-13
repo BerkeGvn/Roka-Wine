@@ -2,11 +2,23 @@
   <section class="wine section">
     <div class="wine-main">
       <div class="wine-main-images">
-        <img class="wine-main-images-1" src="../../assets/images/barrels.jpg" alt="a wine barrel" />
+        <img
+          class="wine-main-images-1"
+          src="../../assets/images/barrels.jpg"
+          alt="a wine barrel"
+          data-aos="fade-up"
+          data-aos-duration="500"
+          data-aos-delay="300"
+          data-aos-once="true"
+        />
         <img
           class="wine-main-images-2"
           src="../../assets/images/wine-red.jpg"
           alt="a wine bottle"
+          data-aos="fade-up"
+          data-aos-duration="500"
+          data-aos-delay="600"
+          data-aos-once="true"
         />
         <img
           class="wine-main-images-3"
@@ -17,21 +29,40 @@
         />
       </div>
       <div class="wine-main-info">
-        <h2 class="wine-main-info-header-h2 section-header">WINES.</h2>
+        <h2
+          class="wine-main-info-header-h2 section-header"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-delay="500"
+          data-aos-once="true"
+        >
+          WINES.
+        </h2>
         <div class="wine-main-info-text">
-          <p>
+          <p data-aos="fade-up" data-aos-duration="800" data-aos-delay="1000" data-aos-once="true">
             Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia
             consequat duis enim velit mollit.
           </p>
         </div>
         <div class="wine-main-info-button">
-          <a href="#">Our Wines </a>
+          <a
+            href="#"
+            data-aos="fade-up"
+            data-aos-duration="800"
+            data-aos-delay="1200"
+            data-aos-once="true"
+            >Our Wines
+          </a>
           <svg
             width="12"
             height="20"
             viewBox="0 0 12 20"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
+            data-aos="fade-left"
+            data-aos-duration="800"
+            data-aos-delay="1200"
+            data-aos-once="true"
           >
             <path
               d="M2 -8.74228e-07L12 10L2 20L0.225001 18.225L8.45 10L0.225002 1.775L2 -8.74228e-07Z"

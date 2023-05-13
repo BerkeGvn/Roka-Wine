@@ -2,7 +2,15 @@
   <section ref="target" class="family section">
     <div class="family-main">
       <div class="family-main-header">
-        <h2 class="family-main-header-h2 section-header">FAMILY.</h2>
+        <h2
+          class="family-main-header-h2 section-header"
+          data-aos="fade-right"
+          data-aos-duration="1000"
+          data-aos-delay="500"
+          data-aos-once="true"
+        >
+          FAMILY.
+        </h2>
       </div>
       <div class="family-main-info">
         <div class="family-main-info-text">
@@ -35,7 +43,6 @@
               alt="mansion picture"
             />
           </div>
-
           <img
             class="family-main-info-images-3"
             src="../../assets/images/dog-farm.jpg"
@@ -114,6 +121,10 @@ animate.words('.family-main-info-h3-words', '.family')
         width: 200%;
         z-index: 5;
         position: relative;
+        & span {
+          margin-right: 10px;
+          display: inline-block;
+        }
       }
       & p {
         margin-top: 25%;
@@ -150,5 +161,21 @@ animate.words('.family-main-info-h3-words', '.family')
 }
 .visible {
   stroke-dashoffset: 0%;
+}
+[data-aos='picture-animation'] {
+  transform: scale(1.5);
+  opacity: 0;
+  transition: all;
+  &.aos-animate {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+[data-aos='line-animation'] {
+  width: 5%;
+  transition: all;
+  &.aos-animate {
+    width: 105%;
+  }
 }
 </style>

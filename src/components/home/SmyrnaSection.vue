@@ -75,4 +75,13 @@ const { target, animateVal } = useAnimation()
     }
   }
 }
+[data-aos='picture-animation'] {
+  transform: scale(1.5) translate3d(0, -30%, 0);
+  opacity: 0;
+  transition: all;
+  &.aos-animate {
+    transform: scale(1) translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
 </style>
