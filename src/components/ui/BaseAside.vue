@@ -18,6 +18,7 @@ aside {
   writing-mode: vertical-rl;
   letter-spacing: 4px;
   align-self: stretch;
+  position: relative;
 }
 .dark {
   color: var(--rw-primary-2);

@@ -1,17 +1,16 @@
 import { onMounted } from "vue";
-
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 
 gsap.registerPlugin(ScrollTrigger)
 
-export function test(el, locoScroll) {
+export function gsapLoco(el, locoScroll) {
+  locoScroll.on("scroll", ScrollTrigger.update);
+
   ScrollTrigger.scrollerProxy(el, {
     scrollTop(value) {
-      return arguments.length
-        ? locoScroll.scrollTo(value, 0, 0)
-        : locoScroll.scroll.instance.scroll.y;
+      return arguments.length ? locoScroll.scrollTo(value, { duration: 0, disableLerp: true }) : locoScroll.scroll.instance.scroll.y;
     },
     getBoundingClientRect() {
       return {
@@ -20,9 +19,12 @@ export function test(el, locoScroll) {
         width: window.innerWidth,
         height: window.innerHeight
       };
-    }
-
+    },
+    pinType: el.style.transform ? "transform" : "fixed"
   });
+  ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+
+  ScrollTrigger.refresh();
 }
 
 export const animate = {
@@ -115,7 +117,6 @@ export const animate = {
   },
 
   parallax(el) {
-    console.log('asfds')
     onMounted(() => {
       gsap.to(el, {
         backgroundPosition: "50% 100%",
@@ -129,7 +130,32 @@ export const animate = {
         }
       });
     })
-  }
+  },
 
+  loadingSlide(el) {
+    onMounted(() => {
+      let tl = gsap.timeline();
+      tl.from(el, {
+        y: '100%',
+        delay: 3,
+        duration: 1,
+        ease: 'Power1.easeOut'
+      });
+      tl.to(el, {
+        y: '0%',
+        duration: 1,
+        ease: 'Power1.easeOut'
+      });
+      tl.to(el, {
+        y: '-100%',
+        duration: 1,
+        ease: 'Power1.easeIn'
+      });
+      tl.to(el, {
+        height: 0,
+        width: 0,
+      });
+    })
+  }
 }
 

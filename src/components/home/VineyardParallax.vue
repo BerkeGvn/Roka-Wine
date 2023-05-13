@@ -1,5 +1,5 @@
 <template>
-  <section class="main">
+  <section class="main asd">
     <div class="vineyard-parallax"></div>
     <BaseAside>Elegant</BaseAside>
   </section>

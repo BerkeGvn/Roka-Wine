@@ -1,14 +1,15 @@
 <template>
-  <div ref="scrollContainer" class="container" data-scroll-container>
-    <RouterView />
-  </div>
+  <main ref="scrollContainer" class="container" data-scroll-container>
+    <RouterView @testEm="testEm" />
+  </main>
 </template>
 
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import LocomotiveScroll from 'locomotive-scroll'
 import 'locomotive-scroll/dist/locomotive-scroll.css'
-import { test } from './composables/useElementAnimationHandler'
+import { gsapLoco } from './composables/useElementAnimationHandler'
+
 const scrollContainer = ref(null)
 let scroll = null
 
@@ -20,15 +21,25 @@ onMounted(() => {
       smooth: true
     }
   })
-  test(scrollContainer.value, scroll)
+  gsapLoco(scrollContainer.value, scroll)
 })
+
 onBeforeUnmount(() => {
   scroll.destroy()
 })
 
 setTimeout(() => {
   scroll.update()
-}, 500)
+}, 7000)
+/* function startScroll() {
+  scroll.start()
+  setTimeout(() => {
+    scroll.update()
+  }, 7000)
+}
+function testEm() {
+  startScroll()
+} */
 </script>
 
 <style lang="scss">
