@@ -21,7 +21,7 @@
       <div class="wine-main-info">
         <h2 class="wine-main-info-header-h2 section-header">WINES.</h2>
         <div class="wine-main-info-text">
-          <p>
+          <p data-aos="fade-up" data-aos-duration="800" data-aos-delay="1000" data-aos-once="true">
             Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia
             consequat duis enim velit mollit.
           </p>
