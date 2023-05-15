@@ -35,6 +35,8 @@
 <script setup></script>
 
 <style lang="scss" scoped>
+@import '../../assets/breakpoints.scss';
+
 .main-header {
   height: 100vh;
   background-image: url('../../assets/images/main-2.jpg');
@@ -60,7 +62,7 @@
       & span {
         color: var(--rw-secondary-2);
         line-height: 13vw;
-        font-size: 8.85vw;
+        font-size: calc(var(--rw-font-h1) * 1.6);
       }
     }
   }
@@ -98,6 +100,11 @@
           }
         }
       }
+    }
+  }
+  @media only screen and (max-width: $bp-950) {
+    & .navbar {
+      padding: 2rem 2rem;
     }
   }
 }

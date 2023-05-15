@@ -7,13 +7,15 @@
           class="wine-main-images-2"
           src="../../assets/images/wine-red.jpg"
           alt="a wine bottle"
+          data-scroll
+          data-scroll-speed="1"
         />
         <img
           class="wine-main-images-3"
           src="../../assets/images/wine-glass.jpg"
           alt="a wine glass"
           data-scroll
-          data-scroll-speed="1"
+          data-scroll-speed="2"
         />
       </div>
       <div class="wine-main-info">
@@ -50,12 +52,13 @@ import BaseAside from '../ui/BaseAside.vue'
 </script>
 
 <style lang="scss" scoped>
+@import '../../assets/breakpoints.scss';
 .wine {
   background-color: var(--rw-primary-2);
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url(../../assets/background-logo.svg);
+  background-image: url(../../assets/logos/background-logo.svg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -77,6 +80,7 @@ import BaseAside from '../ui/BaseAside.vue'
       }
       &-text {
         margin-left: 30%;
+        margin-right: 2rem;
       }
       &-button {
         margin-right: 5%;
@@ -139,6 +143,55 @@ import BaseAside from '../ui/BaseAside.vue'
         left: 100%;
         bottom: -5%;
         z-index: 2;
+      }
+    }
+  }
+  @media only screen and (max-width: $bp-950) {
+    &-main {
+      flex: 1;
+      position: relative;
+      display: flex;
+      align-self: stretch;
+
+      &-info {
+        &-text {
+          margin-left: 15%;
+        }
+      }
+      &-images {
+        padding-left: 2rem;
+        &-3 {
+          width: 20vw;
+          left: 100%;
+          bottom: -2%;
+        }
+      }
+    }
+  }
+  @media only screen and (max-width: $bp-750) {
+    &-main {
+      flex-direction: column;
+      margin-top: 8rem;
+      &-info {
+        margin-top: 8rem;
+        gap: 8rem;
+      }
+      &-images {
+        padding-left: 2rem;
+        padding-top: 1rem;
+        &-1 {
+          width: 50vw;
+        }
+        &-2 {
+          width: 45vw;
+          top: 28%;
+          left: 32%;
+        }
+        &-3 {
+          width: 35vw;
+          left: 55%;
+          bottom: -50%;
+        }
       }
     }
   }

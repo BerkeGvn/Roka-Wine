@@ -42,7 +42,7 @@ animate.loadingSlide('.animateScreen')
 .loading {
   height: 100vh;
   background-color: var(--rw-primary-2);
-  background-image: url(../../assets/background-logo-2.svg);
+  background-image: url(../../assets/logos/background-logo-2.svg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;

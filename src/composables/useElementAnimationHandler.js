@@ -69,7 +69,6 @@ export const animate = {
           start: '120px 80%',
           trigger: container,
           scroller: '.container',
-          markers: true
         },
         y: -200,
         scale: 1.5,

@@ -41,7 +41,7 @@
             src="../../assets/images/dog-farm.jpg"
             alt="dog and cow picture"
             data-scroll
-            data-scroll-speed="1"
+            data-scroll-speed="2"
           />
         </div>
       </div>
@@ -51,8 +51,6 @@
     <svg class="background-animation">
       <text
         class="background-animation-text"
-        x="25%"
-        y="90%"
         dominant-baseline="middle"
         text-anchor="middle"
         fill="none"
@@ -79,22 +77,22 @@ animate.words('.family-main-info-h3-words', '.family')
 </script>
 
 <style lang="scss" scoped>
+@import '../../assets/breakpoints.scss';
 .family {
   color: var(--rw-primary-2);
   background-color: var(--rw-accent-2);
   display: flex;
   align-items: center;
   position: relative;
+  padding-left: 6rem;
   &-main {
     flex: 1;
     &-header {
-      margin-left: 6rem;
       width: 90%;
       border-bottom: 1px solid var(--rw-primary-2);
     }
     &-info {
       font-size: var(--rw-font-p2);
-      margin-left: 6rem;
       display: flex;
       &-text {
         position: relative;
@@ -147,8 +145,110 @@ animate.words('.family-main-info-h3-words', '.family')
       }
     }
   }
-}
-.visible {
-  stroke-dashoffset: 0%;
+  & svg {
+    @media only screen and (max-width: $bp-750) {
+      height: 100vh;
+    }
+  }
+  & text {
+    transform: translate(25%, 90%);
+    @media only screen and (max-width: $bp-950) {
+      transform: translate(25%, 95%);
+    }
+    @media only screen and (max-width: $bp-750) {
+      font-size: var(--rw-font-h3);
+      transform: translate(25%, 95%);
+    }
+  }
+  @media only screen and (max-width: $bp-950) {
+    padding-left: 2rem;
+    align-items: normal;
+    &-main {
+      &-info {
+        &-text {
+          &-line {
+            margin-top: 2rem;
+          }
+        }
+        & p {
+          margin-top: 15%;
+        }
+        &-images {
+          &-1 {
+            width: 35vw;
+            position: absolute;
+            z-index: 2;
+            right: 4%;
+            top: -15rem;
+          }
+          &-3 {
+            width: 30vw;
+            position: absolute;
+            bottom: -20%;
+            right: 1%;
+          }
+        }
+      }
+    }
+  }
+  @media only screen and (max-width: $bp-750) {
+    &-main {
+      margin-top: 8rem;
+      &-header {
+        width: 100%;
+
+        & h2 {
+          position: relative;
+          z-index: 20;
+        }
+      }
+      &-info {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+        &-h3 {
+          width: 100%;
+          position: relative;
+          z-index: 20;
+        }
+        & p {
+          margin-top: 5%;
+        }
+        &-text {
+          &-line {
+            display: none;
+          }
+        }
+        &-images {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding-top: 5rem;
+          margin-bottom: 1rem;
+          margin-top: 4rem;
+          &-1 {
+            width: 45vw;
+            position: absolute;
+            z-index: 5;
+            right: 1%;
+            top: -45rem;
+          }
+          &-2 {
+            width: 95%;
+            &-wrapper {
+              display: flex;
+              justify-content: center;
+            }
+          }
+          &-3 {
+            width: 65%;
+            position: absolute;
+            bottom: -55%;
+            right: 1%;
+          }
+        }
+      }
+    }
+  }
 }
 </style>

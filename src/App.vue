@@ -1,6 +1,6 @@
 <template>
   <main ref="scrollContainer" class="container" data-scroll-container>
-    <RouterView @testEm="testEm" />
+    <RouterView />
   </main>
 </template>
 
@@ -43,6 +43,7 @@ function testEm() {
 </script>
 
 <style lang="scss">
+@import './assets/breakpoints.scss';
 .section {
   min-height: 100vh;
 }
@@ -50,6 +51,9 @@ function testEm() {
   font-size: var(--rw-font-h1);
   font-weight: 400;
   font-style: italic;
+  @media only screen and (max-width: $bp-550) {
+    font-size: var(--rw-font-h2);
+  }
 }
 .background-animation {
   font-family: 'Source Serif Pro', serif;
