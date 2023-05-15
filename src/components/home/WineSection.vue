@@ -2,42 +2,24 @@
   <section class="wine section">
     <div class="wine-main">
       <div class="wine-main-images">
-        <img
-          class="wine-main-images-1"
-          src="../../assets/images/barrels.jpg"
-          alt="a wine barrel"
-          data-aos="fade-up"
-          data-aos-duration="500"
-          data-aos-delay="300"
-          data-aos-once="true"
-        />
+        <img class="wine-main-images-1" src="../../assets/images/barrels.jpg" alt="a wine barrel" />
         <img
           class="wine-main-images-2"
           src="../../assets/images/wine-red.jpg"
           alt="a wine bottle"
-          data-aos="fade-up"
-          data-aos-duration="500"
-          data-aos-delay="600"
-          data-aos-once="true"
+          data-scroll
+          data-scroll-speed="1"
         />
         <img
           class="wine-main-images-3"
           src="../../assets/images/wine-glass.jpg"
           alt="a wine glass"
           data-scroll
-          data-scroll-speed="1"
+          data-scroll-speed="2"
         />
       </div>
       <div class="wine-main-info">
-        <h2
-          class="wine-main-info-header-h2 section-header"
-          data-aos="fade-up"
-          data-aos-duration="1000"
-          data-aos-delay="500"
-          data-aos-once="true"
-        >
-          WINES.
-        </h2>
+        <h2 class="wine-main-info-header-h2 section-header">WINES.</h2>
         <div class="wine-main-info-text">
           <p data-aos="fade-up" data-aos-duration="800" data-aos-delay="1000" data-aos-once="true">
             Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia
@@ -45,24 +27,13 @@
           </p>
         </div>
         <div class="wine-main-info-button">
-          <a
-            href="#"
-            data-aos="fade-up"
-            data-aos-duration="800"
-            data-aos-delay="1200"
-            data-aos-once="true"
-            >Our Wines
-          </a>
+          <a href="#">Our Wines </a>
           <svg
             width="12"
             height="20"
             viewBox="0 0 12 20"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            data-aos="fade-left"
-            data-aos-duration="800"
-            data-aos-delay="1200"
-            data-aos-once="true"
           >
             <path
               d="M2 -8.74228e-07L12 10L2 20L0.225001 18.225L8.45 10L0.225002 1.775L2 -8.74228e-07Z"
@@ -81,12 +52,13 @@ import BaseAside from '../ui/BaseAside.vue'
 </script>
 
 <style lang="scss" scoped>
+@import '../../assets/breakpoints.scss';
 .wine {
   background-color: var(--rw-primary-2);
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url(../../assets/background-logo.svg);
+  background-image: url(../../assets/logos/background-logo.svg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -108,6 +80,7 @@ import BaseAside from '../ui/BaseAside.vue'
       }
       &-text {
         margin-left: 30%;
+        margin-right: 2rem;
       }
       &-button {
         margin-right: 5%;
@@ -170,6 +143,55 @@ import BaseAside from '../ui/BaseAside.vue'
         left: 100%;
         bottom: -5%;
         z-index: 2;
+      }
+    }
+  }
+  @media only screen and (max-width: $bp-950) {
+    &-main {
+      flex: 1;
+      position: relative;
+      display: flex;
+      align-self: stretch;
+
+      &-info {
+        &-text {
+          margin-left: 15%;
+        }
+      }
+      &-images {
+        padding-left: 2rem;
+        &-3 {
+          width: 20vw;
+          left: 100%;
+          bottom: -2%;
+        }
+      }
+    }
+  }
+  @media only screen and (max-width: $bp-750) {
+    &-main {
+      flex-direction: column;
+      margin-top: 8rem;
+      &-info {
+        margin-top: 8rem;
+        gap: 8rem;
+      }
+      &-images {
+        padding-left: 2rem;
+        padding-top: 1rem;
+        &-1 {
+          width: 50vw;
+        }
+        &-2 {
+          width: 45vw;
+          top: 28%;
+          left: 32%;
+        }
+        &-3 {
+          width: 35vw;
+          left: 55%;
+          bottom: -50%;
+        }
       }
     }
   }

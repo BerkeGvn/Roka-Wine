@@ -9,6 +9,8 @@ const props = defineProps(['color'])
 </script>
 
 <style lang="scss" scoped>
+@import '../../assets/breakpoints.scss';
+
 aside {
   border-left: 3px solid var(--rw-text-color-1);
   padding: 1.04vw 1.04vw;
@@ -19,6 +21,9 @@ aside {
   letter-spacing: 4px;
   align-self: stretch;
   position: relative;
+  @media only screen and (max-width: $bp-950) {
+    padding: 0.75rem 0.75rem;
+  }
 }
 .dark {
   color: var(--rw-primary-2);

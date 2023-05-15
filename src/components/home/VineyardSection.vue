@@ -23,8 +23,6 @@
           <svg class="background-animation">
             <text
               class="background-animation-text"
-              x="25%"
-              y="20%"
               dominant-baseline="middle"
               text-anchor="middle"
               fill="none"
@@ -84,6 +82,8 @@ animate.line('.vineyard-main-info-line', '.vineyard')
 </script>
 
 <style lang="scss" scoped>
+@import '../../assets/breakpoints.scss';
+
 .vineyard {
   background-color: var(--rw-accent-2);
   color: var(--rw-primary-2);
@@ -171,6 +171,137 @@ animate.line('.vineyard-main-info-line', '.vineyard')
       & svg {
         width: 4.8rem;
         height: 4.8rem;
+      }
+    }
+  }
+  & text {
+    transform: translate(25%, 20%);
+    @media only screen and (max-width: $bp-750) {
+      font-size: var(--rw-font-h2);
+      transform: translate(50%, 8%);
+    }
+  }
+  @media only screen and (max-width: $bp-950) {
+    &-main {
+      &-header {
+        &-h2 {
+          margin-left: 2rem;
+        }
+      }
+      &-info {
+        &-images {
+          & img {
+            &:first-child {
+              width: 45vw;
+              position: relative;
+              z-index: 2;
+            }
+            &:last-child {
+              top: 40%;
+              left: -5%;
+              z-index: 3;
+            }
+          }
+          &::after {
+            font-size: 12rem;
+          }
+        }
+      }
+    }
+    &-footer {
+      &-logo {
+        position: absolute;
+        top: 15%;
+        right: -6rem;
+        & svg {
+          width: 4rem;
+          height: 4rem;
+        }
+      }
+    }
+  }
+  @media only screen and (max-width: $bp-750) {
+    align-items: normal;
+    &-main {
+      &-header {
+        &-h2 {
+          margin-top: 1rem;
+        }
+        & img {
+          width: 100%;
+          height: 7rem;
+        }
+      }
+      &-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10rem;
+        gap: 15rem;
+        &-line {
+          display: none;
+        }
+        & p {
+          width: 90%;
+          margin-bottom: 2rem;
+        }
+        &-images {
+          display: flex;
+          justify-content: center;
+          margin: 0;
+          & img {
+            &:first-child {
+              width: 90%;
+              position: relative;
+              z-index: 2;
+            }
+            &:last-child {
+              height: 55vw;
+              top: 40%;
+              left: 1%;
+              z-index: 3;
+            }
+          }
+          &::after {
+            bottom: -40%;
+            right: 0px;
+          }
+        }
+      }
+    }
+    &-footer {
+      margin-top: 4rem;
+      font-size: var(--rw-font-h6);
+      position: absolute;
+      bottom: 0;
+      & h3 {
+        padding-right: 8rem;
+      }
+      &-border {
+        border: none;
+        width: 100vw;
+        height: 2px;
+        background-color: var(--rw-primary-2);
+        position: relative;
+        /*    &::after {
+          content: '';
+          position: absolute;
+          height: 2px;
+          background-color: var(--rw-primary-2);
+          right: -13%;
+          top: 0;
+          width: 15vw;
+        }*/
+      }
+      &-logo {
+        position: absolute;
+        top: 15%;
+        right: 2rem;
+
+        & svg {
+          width: 3rem;
+          height: 3rem;
+        }
       }
     }
   }
