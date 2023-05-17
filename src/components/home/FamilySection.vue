@@ -1,5 +1,5 @@
 <template>
-  <section ref="target" class="family section">
+  <section ref="target" class="family section" data-scroll-section>
     <div class="family-main">
       <div class="family-main-header">
         <h2
@@ -81,6 +81,8 @@ animate.mainImg('.family-main-info-images-2', '.family')
 animate.text('.family-main-info-p', '.family')
 animate.line('.family-main-info-text-line', '.family')
 animate.words('.family-main-info-h3-words', '.family')
+animate.smallImg('.family-main-info-images-1', '.family')
+animate.smallImg('.family-main-info-images-3', '.family')
 </script>
 
 <style lang="scss" scoped>
@@ -152,6 +154,7 @@ animate.words('.family-main-info-h3-words', '.family')
           position: absolute;
           bottom: -15%;
           right: 1%;
+          z-index: 55;
         }
       }
     }
@@ -261,21 +264,10 @@ animate.words('.family-main-info-h3-words', '.family')
       }
     }
   }
-}
-[data-aos='picture-animation'] {
-  transform: scale(1.5);
-  opacity: 0;
-  transition: all;
-  &.aos-animate {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-[data-aos='line-animation'] {
-  width: 5%;
-  transition: all;
-  &.aos-animate {
-    width: 105%;
+  @media only screen and (max-width: 450px) and (max-height: 750px) {
+    & .family-main-info-images-1 {
+      top: -55rem;
+    }
   }
 }
 </style>

@@ -1,10 +1,11 @@
 <template>
   <main ref="scrollContainer" class="container" data-scroll-container>
-    <RouterView />
+    <HomeView></HomeView>
   </main>
 </template>
 
 <script setup>
+import HomeView from './views/HomeView.vue'
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import LocomotiveScroll from 'locomotive-scroll'
 import 'locomotive-scroll/dist/locomotive-scroll.css'
@@ -19,6 +20,10 @@ onMounted(() => {
     smooth: true,
     smartphone: {
       smooth: true
+    },
+    tablet: {
+      smooth: true,
+      breakpoint: 0
     }
   })
   gsapLoco(scrollContainer.value, scroll)
@@ -44,6 +49,7 @@ function testEm() {
 
 <style lang="scss">
 @import './assets/breakpoints.scss';
+
 .section {
   min-height: 100vh;
 }

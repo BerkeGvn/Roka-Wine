@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer">
+  <footer class="footer" data-scroll-section>
     <div class="footer-info">
       <div class="footer-info-logo">
         <svg fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -35,6 +35,7 @@
 <script setup></script>
 
 <style lang="scss" scoped>
+@import '../../assets/breakpoints.scss';
 .footer {
   min-height: 30vh;
 
@@ -78,6 +79,20 @@
       padding-top: 1rem;
       & p {
         width: 50%;
+      }
+    }
+  }
+  @media only screen and (max-width: $bp-750) {
+    &-info {
+      margin-left: 0;
+      position: relative;
+      margin-top: 0;
+      &-logo {
+        position: absolute;
+        bottom: 0;
+        margin-left: -2rem;
+        width: 50%;
+        height: 0%;
       }
     }
   }

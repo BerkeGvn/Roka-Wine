@@ -1,5 +1,5 @@
 <template>
-  <section ref="target" class="vineyard section">
+  <section ref="target" class="vineyard section" data-scroll-section>
     <div class="vineyard-main">
       <div class="vineyard-main-header">
         <h2
@@ -77,6 +77,7 @@ const { target, animateVal } = useAnimation()
 
 animate.header('.vineyard-main-header-h2', '.vineyard')
 animate.mainImg('.vineyard-main-info-images-1', '.vineyard')
+animate.smallImg('.vineyard-main-info-images-2', '.vineyard')
 animate.text('.vineyard-main-info-p', '.vineyard')
 animate.line('.vineyard-main-info-line', '.vineyard')
 </script>
@@ -283,15 +284,6 @@ animate.line('.vineyard-main-info-line', '.vineyard')
         height: 2px;
         background-color: var(--rw-primary-2);
         position: relative;
-        /*    &::after {
-          content: '';
-          position: absolute;
-          height: 2px;
-          background-color: var(--rw-primary-2);
-          right: -13%;
-          top: 0;
-          width: 15vw;
-        }*/
       }
       &-logo {
         position: absolute;
@@ -305,21 +297,10 @@ animate.line('.vineyard-main-info-line', '.vineyard')
       }
     }
   }
-}
-[data-aos='picture-animation'] {
-  transform: scale(1.5);
-  opacity: 0;
-  transition: all;
-  &.aos-animate {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-[data-aos='line-animation'] {
-  width: 0%;
-  transition: all;
-  &.aos-animate {
-    width: 50%;
+  @media only screen and (max-width: 450px) and (max-height: 750px) {
+    & .vineyard-main-info-images {
+      margin-bottom: 15rem;
+    }
   }
 }
 </style>

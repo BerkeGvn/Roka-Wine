@@ -1,5 +1,5 @@
 <template>
-  <section class="wine section">
+  <section class="wine section" data-scroll-section>
     <div class="wine-main">
       <div class="wine-main-images">
         <img class="wine-main-images-1" src="../../assets/images/barrels.jpg" alt="a wine barrel" />
@@ -49,6 +49,11 @@
 
 <script setup>
 import BaseAside from '../ui/BaseAside.vue'
+import { animate } from '../../composables/useElementAnimationHandler'
+
+animate.header('.wine-main-info-header-h2', '.wine')
+animate.text('.wine-main-info-text', '.wine')
+animate.button('.wine-main-info-button', '.wine')
 </script>
 
 <style lang="scss" scoped>
@@ -143,9 +148,13 @@ import BaseAside from '../ui/BaseAside.vue'
         left: 100%;
         bottom: -5%;
         z-index: 2;
+        @media only screen and (max-width: 1350px) and (min-height: 830px) {
+          width: 20vw;
+        }
       }
     }
   }
+
   @media only screen and (max-width: $bp-950) {
     &-main {
       flex: 1;
@@ -173,7 +182,7 @@ import BaseAside from '../ui/BaseAside.vue'
       flex-direction: column;
       margin-top: 8rem;
       &-info {
-        margin-top: 8rem;
+        margin-top: 10rem;
         gap: 8rem;
       }
       &-images {
@@ -193,6 +202,11 @@ import BaseAside from '../ui/BaseAside.vue'
           bottom: -50%;
         }
       }
+    }
+  }
+  @media only screen and (max-width: 450px) and (max-height: 750px) {
+    &-main {
+      margin-bottom: 10rem;
     }
   }
 }
