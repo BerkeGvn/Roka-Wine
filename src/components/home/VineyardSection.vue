@@ -1,5 +1,5 @@
 <template>
-  <section ref="target" class="vineyard section">
+  <section ref="target" class="vineyard section" data-scroll-section>
     <div class="vineyard-main">
       <div class="vineyard-main-header">
         <h2
@@ -297,21 +297,10 @@ animate.line('.vineyard-main-info-line', '.vineyard')
       }
     }
   }
-}
-[data-aos='picture-animation'] {
-  transform: scale(1.5);
-  opacity: 0;
-  transition: all;
-  &.aos-animate {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-[data-aos='line-animation'] {
-  width: 0%;
-  transition: all;
-  &.aos-animate {
-    width: 50%;
+  @media only screen and (max-width: 450px) and (max-height: 750px) {
+    & .vineyard-main-info-images {
+      margin-bottom: 15rem;
+    }
   }
 }
 </style>

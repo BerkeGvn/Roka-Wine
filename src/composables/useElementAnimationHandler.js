@@ -22,9 +22,14 @@ export function gsapLoco(el, locoScroll) {
     },
     pinType: el.style.transform ? "transform" : "fixed"
   });
+
+
   ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
 
-  ScrollTrigger.refresh();
+  ScrollTrigger.refresh()
+
+
+
 }
 
 export const animate = {
@@ -102,7 +107,6 @@ export const animate = {
           start: '120px 80%',
           trigger: container,
           scroller: '.container',
-          markers: true
         },
         duration: 1.8,
         opacity: 0,

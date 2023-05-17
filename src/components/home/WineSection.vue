@@ -1,5 +1,5 @@
 <template>
-  <section class="wine section">
+  <section class="wine section" data-scroll-section>
     <div class="wine-main">
       <div class="wine-main-images">
         <img class="wine-main-images-1" src="../../assets/images/barrels.jpg" alt="a wine barrel" />
@@ -202,6 +202,11 @@ animate.button('.wine-main-info-button', '.wine')
           bottom: -50%;
         }
       }
+    }
+  }
+  @media only screen and (max-width: 450px) and (max-height: 750px) {
+    &-main {
+      margin-bottom: 10rem;
     }
   }
 }

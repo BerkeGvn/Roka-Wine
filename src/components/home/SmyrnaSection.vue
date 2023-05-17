@@ -1,5 +1,5 @@
 <template>
-  <section ref="target" class="smyrna section">
+  <section ref="target" class="smyrna section" data-scroll-section>
     <div class="smyrna-main">
       <div class="smyrna-main-wrapper-pic">
         <img class="smyrna-main-pic" src="../../assets/images/smyrna.jpg" alt="" ref="img" />

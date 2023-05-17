@@ -1,5 +1,5 @@
 <template>
-  <section class="main asd">
+  <section class="main" data-scroll-section>
     <div class="vineyard-parallax"></div>
     <BaseAside>Elegant</BaseAside>
   </section>
@@ -21,6 +21,8 @@ animate.parallax('.main')
   background-attachment: scroll;
   height: 100vh;
   display: flex;
+  position: relative;
+  z-index: -10;
 }
 .vineyard-parallax {
   flex: 1;

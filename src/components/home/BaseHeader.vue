@@ -1,5 +1,5 @@
 <template>
-  <div class="main-header">
+  <div class="main-header" data-scroll-section>
     <div class="main-sec">
       <div class="logo">
         <svg viewBox="0 0 152 73" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -105,6 +105,44 @@
   @media only screen and (max-width: $bp-950) {
     & .navbar {
       padding: 2rem 2rem;
+    }
+  }
+  @media only screen and (max-width: $bp-750) {
+    & .main-sec {
+      display: flex;
+      align-items: center;
+      position: relative;
+      & .logo {
+        position: absolute;
+        align-self: flex-start;
+        & svg {
+          width: 15rem;
+        }
+      }
+    }
+    & .main-quote {
+      width: 100%;
+      line-height: 15rem;
+      & h1 {
+        font-size: var(--rw-font-h1);
+        padding-bottom: 10rem;
+        & span {
+          font-size: calc(var(--rw-font-h1) * 1.4);
+        }
+      }
+    }
+  }
+  @media only screen and (max-width: 500px) {
+    & .main-quote {
+      width: 100%;
+      line-height: 15rem;
+      & h1 {
+        font-size: var(--rw-font-h3);
+        padding-bottom: 10rem;
+        & span {
+          font-size: calc(var(--rw-font-h3) * 1.8);
+        }
+      }
     }
   }
 }

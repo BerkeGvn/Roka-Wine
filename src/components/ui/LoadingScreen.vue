@@ -1,5 +1,5 @@
 <template>
-  <div ref="target" class="loading">
+  <div ref="target" class="loading" data-scroll-section>
     <svg class="loading-animation">
       <text
         class="loading-animation-text"
