@@ -77,6 +77,7 @@ const { target, animateVal } = useAnimation()
 
 animate.header('.vineyard-main-header-h2', '.vineyard')
 animate.mainImg('.vineyard-main-info-images-1', '.vineyard')
+animate.smallImg('.vineyard-main-info-images-2', '.vineyard')
 animate.text('.vineyard-main-info-p', '.vineyard')
 animate.line('.vineyard-main-info-line', '.vineyard')
 </script>
@@ -283,15 +284,6 @@ animate.line('.vineyard-main-info-line', '.vineyard')
         height: 2px;
         background-color: var(--rw-primary-2);
         position: relative;
-        /*    &::after {
-          content: '';
-          position: absolute;
-          height: 2px;
-          background-color: var(--rw-primary-2);
-          right: -13%;
-          top: 0;
-          width: 15vw;
-        }*/
       }
       &-logo {
         position: absolute;

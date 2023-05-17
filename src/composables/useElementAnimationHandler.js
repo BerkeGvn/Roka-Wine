@@ -53,8 +53,24 @@ export const animate = {
           trigger: container,
           scroller: '.container'
         },
-        y: 200,
+        y: '+10vh',
         delay: 0.8,
+        duration: 2,
+        ease: 'power1.inOut',
+        opacity: 0
+      })
+    })
+  },
+  button(el, container) {
+    onMounted(() => {
+      gsap.from(el, {
+        scrollTrigger: {
+          start: '120px 80%',
+          trigger: container,
+          scroller: '.container'
+        },
+        y: '+10vh',
+        delay: 1,
         duration: 2,
         ease: 'power1.inOut',
         opacity: 0
@@ -79,6 +95,22 @@ export const animate = {
       })
     })
   },
+  smallImg(el, container) {
+    onMounted(() => {
+      gsap.from(el, {
+        scrollTrigger: {
+          start: '120px 80%',
+          trigger: container,
+          scroller: '.container',
+          markers: true
+        },
+        duration: 1.8,
+        opacity: 0,
+        delay: 0.6,
+        ease: 'power1.inOut',
+      })
+    })
+  },
 
   words(el, container) {
     onMounted(() => {
@@ -88,8 +120,8 @@ export const animate = {
           trigger: container,
           scroller: '.container'
         },
-        y: 200,
-        delay: 0.8,
+        y: '+10vh',
+        delay: 1,
         duration: 1,
         ease: 'power1.inOut',
         stagger: 0.25,
@@ -133,7 +165,7 @@ export const animate = {
 
   loadingSlide(el) {
     onMounted(() => {
-      let tl = gsap.timeline();
+      let tl = gsap.timeline({ paused: false });
       tl.from(el, {
         y: '100%',
         delay: 3,
@@ -158,3 +190,24 @@ export const animate = {
   }
 }
 
+// helper function to play animation when tab isn't active
+function tickGSAPWhileHidden(value) {
+  if (value === false) {
+    document.removeEventListener("visibilitychange", tickGSAPWhileHidden.fn);
+    return clearInterval(tickGSAPWhileHidden.id);
+  }
+  const onChange = () => {
+    clearInterval(tickGSAPWhileHidden.id);
+    if (document.hidden) {
+      gsap.ticker.lagSmoothing(0); // keep the time moving forward (don't adjust for lag)
+      tickGSAPWhileHidden.id = setInterval(gsap.ticker.tick, 500);
+    } else {
+      gsap.ticker.lagSmoothing(500, 33); // restore lag smoothing
+    }
+  };
+  document.addEventListener("visibilitychange", onChange);
+  tickGSAPWhileHidden.fn = onChange;
+  onChange(); // in case the document is currently hidden.
+}
+
+tickGSAPWhileHidden(true);

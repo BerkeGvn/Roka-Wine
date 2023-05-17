@@ -81,6 +81,8 @@ animate.mainImg('.family-main-info-images-2', '.family')
 animate.text('.family-main-info-p', '.family')
 animate.line('.family-main-info-text-line', '.family')
 animate.words('.family-main-info-h3-words', '.family')
+animate.smallImg('.family-main-info-images-1', '.family')
+animate.smallImg('.family-main-info-images-3', '.family')
 </script>
 
 <style lang="scss" scoped>
