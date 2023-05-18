@@ -141,7 +141,7 @@ export const animate = {
           trigger: container,
           scroller: '.container'
         },
-        delay: 2,
+        delay: 3,
         duration: 1,
         ease: 'power1.inOut',
         stagger: 0.25,
@@ -157,8 +157,8 @@ export const animate = {
           trigger: container,
           scroller: '.container'
         },
-        delay: 2,
-        duration: 5,
+        delay: 4,
+        duration: 3,
         ease: 'power1.inOut',
         opacity: 0
       })
@@ -204,17 +204,17 @@ export const animate = {
       tl.from(el, {
         y: '100%',
         delay: 3,
-        duration: 1,
+        duration: 1.5,
         ease: 'Power1.easeOut'
       });
       tl.to(el, {
         y: '0%',
-        duration: 1,
+        duration: 1.5,
         ease: 'Power1.easeOut'
       });
       tl.to(el, {
         y: '-100%',
-        duration: 1,
+        duration: 1.5,
         ease: 'Power1.easeIn'
       });
       tl.to(el, {

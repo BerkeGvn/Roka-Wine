@@ -26,7 +26,7 @@ import LoadingScreen from '../components/ui/LoadingScreen.vue'
 const isLoading = ref(true)
 setTimeout(() => {
   isLoading.value = false
-}, 4000)
+}, 4500)
 </script>
 
 <style lang="scss" scoped>

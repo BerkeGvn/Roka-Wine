@@ -123,7 +123,7 @@ section {
       & .logo {
         position: absolute;
         align-self: flex-start;
-        margin-top: 8rem;
+        margin-top: 2rem;
         & svg {
           width: 15rem;
         }
