@@ -1,5 +1,5 @@
 <template>
-  <div class="main-header" data-scroll-section>
+  <section class="main-header" data-scroll-section>
     <div class="main-sec">
       <div class="logo">
         <svg viewBox="0 0 152 73" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -33,7 +33,7 @@
         <li><a href="#">WINES</a></li>
       </ul>
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup>
@@ -46,7 +46,7 @@ animate.BaseHeaderMain('.quote-point', '.main-header')
 <style lang="scss" scoped>
 @import '../../assets/breakpoints.scss';
 
-.main-header {
+section {
   height: 100vh;
   background-image: url('../../assets/images/main-2.jpg');
   background-repeat: no-repeat;
