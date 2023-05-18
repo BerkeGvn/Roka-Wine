@@ -133,6 +133,37 @@ export const animate = {
       })
     })
   },
+  BaseHeaderWords(el, container) {
+    onMounted(() => {
+      gsap.from(el, {
+        scrollTrigger: {
+          start: '120px 80%',
+          trigger: container,
+          scroller: '.container'
+        },
+        delay: 2,
+        duration: 1,
+        ease: 'power1.inOut',
+        stagger: 0.25,
+        opacity: 0
+      })
+    })
+  },
+  BaseHeaderMain(el, container) {
+    onMounted(() => {
+      gsap.from(el, {
+        scrollTrigger: {
+          start: '120px 80%',
+          trigger: container,
+          scroller: '.container'
+        },
+        delay: 2,
+        duration: 5,
+        ease: 'power1.inOut',
+        opacity: 0
+      })
+    })
+  },
 
   line(el, container) {
     onMounted(() => {

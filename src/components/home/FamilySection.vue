@@ -23,8 +23,10 @@
             <span class="family-main-info-h3-words">ago.</span>
           </h3>
           <p class="family-main-info-p">
-            Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia
-            consequat duis enim velit mollit.
+            Nestled amidst rolling hills, the family-run vineyard of the Smyrna estate has
+            flourished for over half a century, each generation pouring their heart and soul into
+            crafting wines that embody a legacy of passion, dedication, and the timeless art of
+            winemaking.
           </p>
           <div class="family-main-info-text-line"></div>
         </div>
@@ -127,7 +129,7 @@ animate.smallImg('.family-main-info-images-3', '.family')
         }
       }
       & p {
-        margin-top: 25%;
+        margin-top: 15%;
         position: relative;
       }
 
@@ -170,8 +172,7 @@ animate.smallImg('.family-main-info-images-3', '.family')
       transform: translate(25%, 95%);
     }
     @media only screen and (max-width: $bp-750) {
-      font-size: var(--rw-font-h3);
-      transform: translate(25%, 95%);
+      display: none;
     }
   }
   @media only screen and (max-width: $bp-950) {
@@ -237,7 +238,6 @@ animate.smallImg('.family-main-info-images-3', '.family')
           display: flex;
           justify-content: center;
           align-items: center;
-          padding-top: 5rem;
           margin-bottom: 1rem;
           margin-top: 4rem;
           &-1 {
@@ -245,7 +245,7 @@ animate.smallImg('.family-main-info-images-3', '.family')
             position: absolute;
             z-index: 5;
             right: 1%;
-            top: -45rem;
+            top: -65rem;
           }
           &-2 {
             width: 95%;

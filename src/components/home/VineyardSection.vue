@@ -17,8 +17,10 @@
         <div class="vineyard-main-info-line"></div>
         <div>
           <p class="vineyard-main-info-p">
-            Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia
-            consequat duis enim velit mollit.
+            Indulge your senses and embark on a sensory journey at our picturesque vineyard, where
+            nature's bounty is expertly nurtured to produce exquisite wines. With every sip, our
+            handcrafted vintages transport you to a realm of refined taste, inviting you to
+            experience the essence of our vineyard's passion and heritage since 1965.
           </p>
           <svg class="background-animation">
             <text
@@ -76,7 +78,6 @@ import { animate } from '../../composables/useElementAnimationHandler'
 const { target, animateVal } = useAnimation()
 
 animate.header('.vineyard-main-header-h2', '.vineyard')
-animate.mainImg('.vineyard-main-info-images-1', '.vineyard')
 animate.smallImg('.vineyard-main-info-images-2', '.vineyard')
 animate.text('.vineyard-main-info-p', '.vineyard')
 animate.line('.vineyard-main-info-line', '.vineyard')
@@ -264,7 +265,7 @@ animate.line('.vineyard-main-info-line', '.vineyard')
             }
           }
           &::after {
-            bottom: -40%;
+            top: -30%;
             right: 0px;
           }
         }

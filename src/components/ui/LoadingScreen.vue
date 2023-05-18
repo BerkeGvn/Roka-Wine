@@ -7,7 +7,7 @@
         y="40%"
         dominant-baseline="middle"
         text-anchor="middle"
-        fill="none"
+        fill="transparent"
         vector-effect="non-scaling-stroke"
         text-rendering="optimizeLegibility"
         :style="{ 'stroke-dashoffset': animateVal + '%' }"
@@ -20,7 +20,7 @@
         y="60%"
         dominant-baseline="middle"
         text-anchor="middle"
-        fill="none"
+        fill="transparent"
         vector-effect="non-scaling-stroke"
         text-rendering="optimizeLegibility"
         :style="{ 'stroke-dashoffset': animateVal + '%' }"
@@ -39,6 +39,7 @@ animate.loadingSlide('.animateScreen')
 </script>
 
 <style lang="scss" scoped>
+@import '../../assets/breakpoints.scss';
 .loading {
   height: 100vh;
   background-color: var(--rw-primary-2);
@@ -65,5 +66,12 @@ animate.loadingSlide('.animateScreen')
   stroke-width: 2px;
   stroke: var(--rw-text-color-2);
   text-transform: uppercase;
+}
+@media only screen and (max-width: $bp-750) {
+  .loading-animation-text {
+    stroke-dasharray: 100%;
+    stroke-dashoffset: 100%;
+    font-size: 80px;
+  }
 }
 </style>

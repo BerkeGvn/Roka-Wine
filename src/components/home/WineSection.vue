@@ -22,8 +22,10 @@
         <h2 class="wine-main-info-header-h2 section-header">WINES.</h2>
         <div class="wine-main-info-text">
           <p data-aos="fade-up" data-aos-duration="800" data-aos-delay="1000" data-aos-once="true">
-            Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia
-            consequat duis enim velit mollit.
+            Savor the elegance and complexity of our meticulously crafted wines, each bottle a
+            testament to our vineyard's unwavering commitment to excellence. From vine to glass, we
+            invite you to embark on a remarkable oenophilic adventure, where every pour unveils a
+            symphony of flavors that captivate the palate.
           </p>
         </div>
         <div class="wine-main-info-button">
@@ -146,7 +148,7 @@ animate.button('.wine-main-info-button', '.wine')
         width: 15vw;
         position: absolute;
         left: 100%;
-        bottom: -5%;
+        bottom: 0;
         z-index: 2;
         @media only screen and (max-width: 1350px) and (min-height: 830px) {
           width: 20vw;
@@ -180,7 +182,7 @@ animate.button('.wine-main-info-button', '.wine')
   @media only screen and (max-width: $bp-750) {
     &-main {
       flex-direction: column;
-      margin-top: 8rem;
+      margin-bottom: 2rem;
       &-info {
         margin-top: 10rem;
         gap: 8rem;
