@@ -103,3 +103,13 @@ a:visited {
     --rw-font-p4: 1.6rem;
   }
 }
+.main-header {
+  height: 100vh;
+  background-image: url('./images/main-2.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  font-style: italic;
+  display: flex;
+  overflow: hidden;
+}
