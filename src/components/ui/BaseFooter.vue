@@ -38,7 +38,6 @@
 @import '../../assets/breakpoints.scss';
 .footer {
   min-height: 30vh;
-
   color: var(--rw-text-color-3);
   font-size: var(--rw-font-p2);
   display: flex;

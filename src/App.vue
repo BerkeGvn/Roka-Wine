@@ -19,7 +19,8 @@ onMounted(() => {
     el: scrollContainer.value,
     smooth: true,
     smartphone: {
-      smooth: true
+      smooth: true,
+      breakpoint: 0
     },
     tablet: {
       smooth: true,
@@ -36,15 +37,6 @@ onBeforeUnmount(() => {
 setTimeout(() => {
   scroll.update()
 }, 7000)
-/* function startScroll() {
-  scroll.start()
-  setTimeout(() => {
-    scroll.update()
-  }, 7000)
-}
-function testEm() {
-  startScroll()
-} */
 </script>
 
 <style lang="scss">
@@ -70,6 +62,7 @@ function testEm() {
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  z-index: -2;
 }
 .background-animation-text {
   stroke-dasharray: 100%;
@@ -80,6 +73,8 @@ function testEm() {
   stroke: var(--rw-secondary-1);
   text-transform: uppercase;
   transition: all 1s;
+  position: relative;
+  z-index: 600;
 }
 .background-animation-text-small {
   stroke-dasharray: 100%;
@@ -90,5 +85,7 @@ function testEm() {
   stroke: var(--rw-text-color-2);
   text-transform: uppercase;
   transition: all 1s;
+  position: relative;
+  z-index: 60;
 }
 </style>

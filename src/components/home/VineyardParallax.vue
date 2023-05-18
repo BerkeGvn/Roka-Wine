@@ -1,7 +1,7 @@
 <template>
   <section class="main" data-scroll-section>
     <div class="vineyard-parallax"></div>
-    <BaseAside>Elegant</BaseAside>
+    <BaseAside>The Dream</BaseAside>
   </section>
 </template>
 

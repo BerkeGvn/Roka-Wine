@@ -30,7 +30,7 @@
   --rw-font-p3: 0.93vw;
   --rw-font-p4: 0.83vw;
 }
-@media (max-width: 64em) {
+@media (max-width: 59.3em) {
   :root {
     --rw-font-h1: 8rem;
     --rw-font-h2: 6.8rem;
@@ -71,6 +71,11 @@ body {
   font-family: 'Bitter', Arial, 'Helvetica Neue', Helvetica, sans-serif;
   color: var(--rw-text-color-1);
   perspective: 1px;
+  font-style: italic;
+  line-height: 1.4;
+  word-spacing: 0.8px;
+  overflow: hidden;
+  background-color: var(--rw-accent-3);
 }
 
 ul,

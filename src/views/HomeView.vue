@@ -27,16 +27,6 @@ const isLoading = ref(true)
 setTimeout(() => {
   isLoading.value = false
 }, 4000)
-
-/* 
-const emit = defineEmits(['testEm'])
-function test() {
-  emit('testEm')
-}
-setTimeout(() => {
-  test()
-}, 7000) 
- */
 </script>
 
 <style lang="scss" scoped>

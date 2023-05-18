@@ -7,8 +7,11 @@
 
       <h2 class="smyrna-main-header section-header">SMYRNA.</h2>
       <p class="smyrna-main-p">
-        Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia
-        consequat duis enim velit mollit.
+        Smyrna has a fascinating wine history that dates back thousands of years. Renowned for its
+        viticulture, the region around Smyrna has been producing wines since ancient times. Today,
+        Smyrna continues to be a significant player in Turkey's wine industry, showcasing a blend of
+        traditional and modern winemaking techniques and producing a diverse range of exceptional
+        wines for wine enthusiasts to enjoy.
       </p>
       <svg class="background-animation">
         <text
@@ -23,7 +26,7 @@
         </text>
       </svg>
     </div>
-    <BaseAside>The Dream</BaseAside>
+    <BaseAside>The Roots</BaseAside>
   </section>
 </template>
 
@@ -68,8 +71,7 @@ const { target, animateVal } = useAnimation()
       left: 40%;
     }
     &-p {
-      text-align: center;
-      font-size: var(--rw-font-p1);
+      font-size: var(--rw-font-p2);
       margin: 0 1rem;
     }
   }
@@ -82,7 +84,7 @@ const { target, animateVal } = useAnimation()
   }
   @media only screen and (max-width: $bp-950) {
     &-main {
-      margin-left: 2rem;
+      margin-left: 0.5rem;
       margin-right: 2rem;
     }
   }
@@ -99,25 +101,16 @@ const { target, animateVal } = useAnimation()
       margin-right: 0rem;
       gap: 2rem;
       &-header {
-        top: 45vw;
+        top: 40vw;
         left: 12%;
       }
       &-p {
-        margin-top: 5rem;
+        margin-top: 2rem;
       }
       &-pic {
         max-width: 80vw;
       }
     }
-  }
-}
-[data-aos='picture-animation'] {
-  transform: scale(1.5) translate3d(0, -30%, 0);
-  opacity: 0;
-  transition: all;
-  &.aos-animate {
-    transform: scale(1) translate3d(0, 0, 0);
-    opacity: 1;
   }
 }
 </style>

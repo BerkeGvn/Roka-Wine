@@ -20,19 +20,28 @@
         </svg>
       </div>
       <div class="main-quote">
-        <h1>The Breeze of <span class="quote-point">Smyrna</span></h1>
+        <h1 data-scroll data-scroll-speed="1">
+          <span class="quote-words">The </span> <span class="quote-words">Breeze </span>
+          <span class="quote-words">of </span>
+          <span class="quote-point">Smyrna</span>
+        </h1>
       </div>
     </div>
     <div class="navbar">
       <ul>
-        <li><a href="">NEWS</a></li>
-        <li><a href="">WINES</a></li>
+        <li><a href="#">NEWS</a></li>
+        <li><a href="#">WINES</a></li>
       </ul>
     </div>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { animate } from '../../composables/useElementAnimationHandler'
+
+animate.BaseHeaderWords('.quote-words', '.main-header')
+animate.BaseHeaderMain('.quote-point', '.main-header')
+</script>
 
 <style lang="scss" scoped>
 @import '../../assets/breakpoints.scss';
@@ -59,7 +68,7 @@
     & h1 {
       font-size: var(--rw-font-h1);
       font-weight: 400;
-      & span {
+      & .quote-point {
         color: var(--rw-secondary-2);
         line-height: 13vw;
         font-size: calc(var(--rw-font-h1) * 1.6);
@@ -68,7 +77,7 @@
   }
   & .navbar {
     border-left: 3px solid var(--rw-text-color-1);
-    padding: 1.04vw 1.95vw;
+    padding: 1.04vw 2.14vw;
     height: 100%;
     font-size: var(--rw-font-h7);
     writing-mode: vertical-rl;
@@ -94,7 +103,6 @@
           background-size: 100% 200%;
           background-position: 100% 100%;
           &:hover {
-            font-weight: 600;
             transition: all 0.5s ease-in-out;
             background-position: 0% 0%;
           }
@@ -104,7 +112,7 @@
   }
   @media only screen and (max-width: $bp-950) {
     & .navbar {
-      padding: 2rem 2rem;
+      padding: 2.3rem 2.3rem;
     }
   }
   @media only screen and (max-width: $bp-750) {
@@ -115,6 +123,7 @@
       & .logo {
         position: absolute;
         align-self: flex-start;
+        margin-top: 8rem;
         & svg {
           width: 15rem;
         }
@@ -126,7 +135,7 @@
       & h1 {
         font-size: var(--rw-font-h1);
         padding-bottom: 10rem;
-        & span {
+        & .quote-point {
           font-size: calc(var(--rw-font-h1) * 1.4);
         }
       }
@@ -139,7 +148,7 @@
       & h1 {
         font-size: var(--rw-font-h3);
         padding-bottom: 10rem;
-        & span {
+        & .quote-point {
           font-size: calc(var(--rw-font-h3) * 1.8);
         }
       }
